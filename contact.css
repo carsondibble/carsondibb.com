@@ -1,0 +1,480 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: white;
+
+  overflow: hidden;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 50px 40px;
+
+  background: rgba(10, 10, 10, 0.95);
+  border-right: 1px solid #444;
+
+  opacity: 0;
+  transform: translateX(-100%);
+
+  transition: 0.6s ease;
+
+  z-index: 100;
+}
+
+#sidebar.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logo {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+
+  margin-bottom: 40px;
+
+  color: white;
+  text-decoration: none;
+}
+
+/* Signature shown by default */
+
+.sidebar-signature {
+  position: absolute;
+  left: -17px;
+
+  width: 200px;
+  height: auto;
+
+  opacity: 1;
+
+  transition: opacity 0.4s ease;
+}
+
+/* Text hidden by default */
+
+.logo span {
+  position: absolute;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  text-align: center;
+
+  opacity: 0;
+
+  transition: opacity 0.8s ease;
+}
+
+/* Hover transition */
+
+.logo:hover .sidebar-signature {
+  opacity: 0;
+}
+
+.logo:hover span {
+  opacity: 1;
+}
+
+.sidebar-signature path {
+  fill: none;
+  stroke: white;
+
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 20000;
+  stroke-dashoffset: 20000;
+
+  animation: drawSignature 9s ease forwards;
+}
+
+.sidebar-signature path:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.nav-links a {
+  display: block;
+
+  margin: 25px 0;
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 22px;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c49a45;
+  transform: translateX(8px);
+}
+
+/* ========================================
+   BACKGROUND MEDIA
+======================================== */
+
+.video-container,
+.photo-background {
+  position: fixed;
+
+  left: 280px;
+  top: 0;
+
+  width: calc(100% - 280px);
+  height: 100vh;
+
+  overflow: hidden;
+
+  z-index: -1;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Photo Background Slideshow */
+
+.photo-slide {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+
+  transition: opacity 2s ease;
+}
+
+.photo-slide.active {
+  opacity: 1;
+}
+
+.photo-background::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* ========================================
+   CONTACT CONTENT
+======================================== */
+
+.contact-content {
+  height: 100vh;
+
+  margin-left: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-box {
+  width: 600px;
+
+  padding: 60px;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  border: 1px solid #444;
+
+  text-align: center;
+
+  backdrop-filter: blur(5px);
+
+  animation: fadeIn 1.2s ease;
+}
+
+.contact-box h1 {
+  margin-bottom: 30px;
+
+  font-size: 70px;
+  letter-spacing: 10px;
+}
+
+.contact-box p {
+  margin-bottom: 40px;
+
+  font-size: 22px;
+
+  line-height: 1.7;
+}
+
+/* ========================================
+   CONTACT FORM
+======================================== */
+
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.contact-box .form-row {
+  display: flex;
+
+  gap: 20px;
+}
+
+.contact-box .form-row input {
+  flex: 1;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid #555;
+
+  color: white;
+
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+  border-color: white;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-box textarea {
+  min-height: 90px;
+
+  resize: none;
+
+  line-height: 1.5;
+}
+
+/* ========================================
+   BUTTONS + LINKS
+======================================== */
+
+.contact-box button {
+  width: 160px;
+
+  margin: 10px auto 0;
+
+  padding: 15px 30px;
+
+  background: transparent;
+
+  border: 1px solid white;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.contact-box button:hover {
+  background: white;
+  color: black;
+}
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 15px 30px;
+
+  color: white;
+
+  text-decoration: none;
+
+  border: 1px solid white;
+
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: white;
+  color: black;
+}
+
+.contact-note {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  color: #aaa;
+
+  font-size: 14px !important;
+
+  font-style: italic;
+}
+
+.contact-note a {
+  color: white;
+
+  text-decoration: underline;
+
+  transition: 0.3s;
+}
+
+.contact-note a:hover {
+  color: #c49a45;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawSignature {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  position: absolute;
+
+  bottom: 0;
+
+  width: calc(100% - 280px);
+
+  margin-left: 280px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #888;
+
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  #sidebar {
+    display: none;
+  }
+
+  .video-container,
+  .photo-background {
+    left: 0;
+
+    width: 100%;
+  }
+
+  .contact-content {
+    margin-left: 0;
+
+    padding: 30px;
+  }
+
+  .contact-box {
+    width: 100%;
+
+    padding: 40px 25px;
+  }
+
+  footer {
+    width: 100%;
+
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-box .form-row {
+    flex-direction: column;
+  }
+
+  .contact-box h1 {
+    font-size: 45px;
+  }
+}

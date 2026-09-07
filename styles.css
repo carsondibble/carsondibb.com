@@ -1,0 +1,614 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 55px 35px 35px;
+  z-index: 1000;
+}
+
+#signature {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+#sidebar nav {
+  width: 100%;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+#sidebar nav a:hover {
+  opacity: 0.55;
+}
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+  margin-left: 280px;
+  padding: 0 70px;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ========================================
+   HERO SLIDESHOW
+======================================== */
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  background: #111;
+}
+
+.hero-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: grayscale(100%);
+
+  opacity: 0;
+  transform: scale(1.03);
+
+  transition: opacity 1.15s ease-in-out;
+  will-change: opacity, transform;
+}
+
+.hero-slideshow .slide.active {
+  opacity: 1;
+  animation: heroZoom 4s ease-out forwards;
+}
+
+/* Very subtle movement during each slide */
+@keyframes heroZoom {
+  from {
+    transform: scale(1.03);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   SCROLL INDICATOR
+======================================== */
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 0.5;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.55);
+
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.7);
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* ========================================
+   SELECTED WORK
+======================================== */
+
+.selected-work {
+  padding: 120px 0 150px;
+}
+
+.section-label {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+}
+
+/* ========================================
+   FEATURED PHOTO
+======================================== */
+
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 70px;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+.feature:nth-of-type(2) {
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.5fr);
+}
+
+.feature-image {
+  overflow: hidden;
+  cursor: pointer;
+  background: #181818;
+}
+
+.feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.feature-image:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.08);
+}
+
+/* ========================================
+   PHOTO INFORMATION
+======================================== */
+
+.feature-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-number {
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 0.15em;
+  margin-bottom: 22px;
+}
+
+.feature-info h2 {
+  font-size: clamp(32px, 4vw, 58px);
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.feature-location {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 28px;
+}
+
+.feature-description {
+  max-width: 440px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #aaa;
+  margin-bottom: 28px;
+}
+
+.feature-details {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 2000;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox-image {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+#lightbox-close:hover {
+  opacity: 0.5;
+}
+
+#lightbox-info {
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  color: white;
+}
+
+#lightbox-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#lightbox-details {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ========================================
+   CONTACT CTA
+======================================== */
+
+.contact-section {
+  padding: 100px 0 160px;
+  border-top: 1px solid #222;
+}
+
+.contact-section h2 {
+  font-size: clamp(45px, 7vw, 100px);
+  line-height: 0.95;
+  font-weight: 500;
+  max-width: 800px;
+}
+
+.contact-section a {
+  display: inline-block;
+  margin-top: 35px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+  padding-bottom: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.contact-section a:hover {
+  opacity: 0.5;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  border-top: 1px solid #222;
+  padding: 25px 0 30px;
+  color: #555;
+  font-size: 11px;
+}
+
+/* ========================================
+   TO TOP BUTTON
+======================================== */
+
+#to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #444;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  z-index: 900;
+}
+
+#to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#to-top:hover {
+  background: #222;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+  main {
+    padding: 0 45px;
+  }
+
+  .feature {
+    gap: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  #sidebar {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 0 30px;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero h1 {
+    font-size: clamp(65px, 18vw, 140px);
+  }
+
+  .selected-work {
+    padding-top: 80px;
+  }
+
+  .feature,
+  .feature:nth-of-type(2) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 100px;
+  }
+
+  .feature:nth-of-type(2) .feature-image {
+    order: 0;
+  }
+
+  .feature:nth-of-type(2) .feature-info {
+    order: 1;
+  }
+
+  .contact-section {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0 20px;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero p {
+    font-size: 13px;
+    margin-top: 25px;
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    transition: opacity 0.3s ease;
+  }
+
+  .scroll-indicator:hover {
+    opacity: 0.5;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.55);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scaleY(0.7);
+      transform-origin: top;
+    }
+
+    50% {
+      opacity: 1;
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+  }
+
+  .section-label {
+    margin-bottom: 45px;
+  }
+
+  .feature {
+    margin-bottom: 80px;
+  }
+
+  .feature-info h2 {
+    font-size: 34px;
+  }
+
+  .feature-description {
+    font-size: 14px;
+  }
+
+  #lightbox {
+    padding: 20px;
+  }
+
+  #lightbox-image {
+    max-width: 96vw;
+    max-height: 80vh;
+  }
+
+  #lightbox-info {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  #lightbox-close {
+    top: 15px;
+    right: 20px;
+  }
+
+  #to-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* ========================================
+   PAGE TRANSITION
+======================================== */
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999999;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+#page-transition.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #page-transition {
+    transition: none;
+  }
+}
