@@ -1,545 +1,588 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photography | Carson Dibb</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #111;
-        color: #fff;
-        overflow-x: hidden;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography | Carson Dibb</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 40px;
+      background: rgba(10, 10, 10, 0.95);
+      border-right: 1px solid #444;
+      z-index: 1000;
+    }
+
+    .logo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+    }
+
+    .sidebar-signature {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .sidebar-signature path {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 20000;
+      stroke-dashoffset: 20000;
+      animation: drawSignature 9s ease forwards;
+    }
+
+    .sidebar-signature path:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    main {
+      margin-left: 280px;
+      padding: 0;
+    }
+
+    /* ========================================
+   SCROLL INDICATOR
+======================================== */
+
+    .scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+
+      z-index: 10;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      color: rgba(255, 255, 255, 0.8);
+
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      white-space: nowrap;
+
+      cursor: pointer;
+      user-select: none;
+
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .scroll-indicator:hover {
+      opacity: 0.5;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.7);
+
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scaleY(0.65);
+        transform-origin: top;
       }
 
-      #sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 280px;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px 40px;
-        background: rgba(10, 10, 10, 0.95);
-        border-right: 1px solid #444;
-        z-index: 1000;
-      }
-      .logo {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-      }
-      .sidebar-signature {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 200px;
-        height: auto;
-        transform: translate(-50%, -50%);
+      50% {
         opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
       }
-      .sidebar-signature path {
-        fill: none;
-        stroke: #fff;
-        stroke-width: 4;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 20000;
-        stroke-dashoffset: 20000;
-        animation: drawSignature 9s ease forwards;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid #333;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.42);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(90px, 13vw, 190px);
+      font-weight: 700;
+      letter-spacing: 10px;
+      line-height: 0.85;
+    }
+
+    .hero p {
+      margin-top: 30px;
+      color: #ddd;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .featured {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 100px 70px 30px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: #888;
+      margin-bottom: 35px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 70px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .feature-row:nth-child(even) {
+      grid-template-columns: 1fr 1.45fr;
+    }
+
+    .feature-row:nth-child(even) .feature-image {
+      order: 2;
+    }
+
+    .feature-row:nth-child(even) .feature-copy {
+      order: 1;
+    }
+
+    .feature-image {
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #181818;
+    }
+
+    .feature-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+    }
+
+    .feature-image:hover img {
+      transform: scale(1.035);
+      filter: brightness(0.9);
+    }
+
+    .feature-copy {
+      padding: 10px 0;
+    }
+
+    .photo-number {
+      color: #c49a45;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    .feature-copy h2 {
+      font-size: 34px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #bbb;
+      max-width: 520px;
+    }
+
+    /* CONTACT / IMAGE FADE */
+    .contact-cta {
+      position: relative;
+      min-height: 525px;
+      height: 525px;
+      overflow: hidden;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 40px;
+    }
+
+    .contact-images {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      z-index: 0;
+    }
+
+    .contact-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-width: 0;
+      opacity: 0.72;
+      -webkit-mask-image: linear-gradient(to bottom,
+          #000 0%,
+          #000 42%,
+          transparent 100%);
+      mask-image: linear-gradient(to bottom,
+          #000 0%,
+          #000 42%,
+          transparent 100%);
+    }
+
+    .contact-cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(17, 17, 17, 0.08) 0%,
+          rgba(17, 17, 17, 0.25) 42%,
+          #111 100%);
+      z-index: 1;
+    }
+
+    .contact-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-cta h2 {
+      margin-bottom: 12px;
+      font-size: 36px;
+      letter-spacing: 5px;
+    }
+
+    .contact-cta p {
+      margin-bottom: 20px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border: 1px solid #fff;
+      transition: 0.3s;
+    }
+
+    .contact-button:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    footer {
+      margin-left: 0;
+      padding: 30px 20px;
+      background: #0d0d0d;
+      border-top: 1px solid #333;
+      color: #888;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.96);
+      z-index: 999999;
+      cursor: zoom-out;
+    }
+
+    #lightbox.active {
+      display: flex;
+    }
+
+    #lightbox img {
+      max-width: 94vw;
+      max-height: 82vh;
+      object-fit: contain;
+    }
+
+    #close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 50px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    #photo-info {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.6;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+
+    #photo-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #photo-location,
+    #photo-details {
+      font-size: 12px;
+    }
+
+    #to-top {
+      position: fixed;
+      right: 35px;
+      bottom: 35px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(17, 17, 17, 0.9);
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 0;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition:
+        opacity 0.3s,
+        visibility 0.3s,
+        transform 0.3s;
+      z-index: 200;
+    }
+
+    #to-top::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 14px solid currentColor;
+    }
+
+    #to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #to-top:hover {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+
+    #to-top span {
+      display: none;
+    }
+
+    @keyframes drawSignature {
+      to {
+        stroke-dashoffset: 0;
       }
-      .sidebar-signature path:nth-child(2) {
-        animation-delay: 0.8s;
+    }
+
+    /* ========================================
+   PAGE TRANSITION
+======================================== */
+
+    #page-transition {
+      position: fixed;
+      inset: 0;
+      background: #111;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 999999;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+    }
+
+    #page-transition.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+
+      transition: opacity 0.3s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #page-transition {
+        transition: none;
       }
-      .nav-links {
+    }
+
+    @media (max-width: 900px) {
+
+      #sidebar,
+      footer {
         display: none;
       }
 
       main {
-        margin-left: 280px;
-        padding: 0;
-      }
-      /* ========================================
-   SCROLL INDICATOR
-======================================== */
-
-      .scroll-indicator {
-        position: absolute;
-        left: 50%;
-        bottom: 30px;
-        transform: translateX(-50%);
-
-        z-index: 10;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-
-        color: rgba(255, 255, 255, 0.8);
-
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 3px;
-        white-space: nowrap;
-
-        cursor: pointer;
-        user-select: none;
-
-        opacity: 1;
-        transition: opacity 0.4s ease;
+        margin-left: 0;
       }
 
-      .scroll-indicator:hover {
-        opacity: 0.5;
-      }
-
-      .scroll-line {
-        width: 1px;
-        height: 30px;
-        background: rgba(255, 255, 255, 0.7);
-
-        animation: scrollPulse 2s ease-in-out infinite;
-      }
-
-      @keyframes scrollPulse {
-        0%,
-        100% {
-          opacity: 0.3;
-          transform: scaleY(0.65);
-          transform-origin: top;
-        }
-
-        50% {
-          opacity: 1;
-          transform: scaleY(1);
-          transform-origin: top;
-        }
-      }
-
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        border-bottom: 1px solid #333;
-      }
-      .hero-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.42);
-        z-index: 1;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
       .hero h1 {
-        font-size: clamp(90px, 13vw, 190px);
-        font-weight: 700;
-        letter-spacing: 10px;
-        line-height: 0.85;
+        font-size: 72px;
+        letter-spacing: 5px;
       }
+
       .hero p {
-        margin-top: 30px;
-        color: #ddd;
-        font-size: 14px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
+        font-size: 12px;
       }
 
       .featured {
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 100px 70px 30px;
-      }
-      .section-label {
-        font-size: 12px;
-        letter-spacing: 4px;
-        color: #888;
-        margin-bottom: 35px;
-      }
-      .feature-row {
-        display: grid;
-        grid-template-columns: 1.45fr 1fr;
-        gap: 70px;
-        align-items: center;
-        margin-bottom: 120px;
-      }
-      .feature-row:nth-child(even) {
-        grid-template-columns: 1fr 1.45fr;
-      }
-      .feature-row:nth-child(even) .feature-image {
-        order: 2;
-      }
-      .feature-row:nth-child(even) .feature-copy {
-        order: 1;
-      }
-      .feature-image {
-        overflow: hidden;
-        cursor: zoom-in;
-        background: #181818;
-      }
-      .feature-image img {
-        display: block;
-        width: 100%;
-        height: auto;
-        transition:
-          transform 0.45s ease,
-          filter 0.45s ease;
-      }
-      .feature-image:hover img {
-        transform: scale(1.035);
-        filter: brightness(0.9);
-      }
-      .feature-copy {
-        padding: 10px 0;
-      }
-      .photo-number {
-        color: #c49a45;
-        font-size: 11px;
-        letter-spacing: 3px;
-        margin-bottom: 18px;
-      }
-      .feature-copy h2 {
-        font-size: 34px;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-      }
-      .meta {
-        font-size: 12px;
-        line-height: 1.8;
-        color: #777;
-        margin-bottom: 25px;
-      }
-      .description {
-        font-size: 15px;
-        line-height: 1.8;
-        color: #bbb;
-        max-width: 520px;
+        padding: 70px 25px 20px;
       }
 
-      /* CONTACT / IMAGE FADE */
-      .contact-cta {
-        position: relative;
-        min-height: 525px;
-        height: 525px;
-        overflow: hidden;
-        background: #111;
+      .feature-row,
+      .feature-row:nth-child(even) {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 70px 40px;
+        gap: 30px;
+        margin-bottom: 75px;
+        align-items: stretch;
       }
+
+      .feature-row:nth-child(even) .feature-image,
+      .feature-row:nth-child(even) .feature-copy {
+        order: initial;
+      }
+
+      .feature-copy h2 {
+        font-size: 28px;
+      }
+
+      .contact-cta {
+        height: 600px;
+        min-height: 600px;
+        padding: 50px 25px;
+      }
+
       .contact-images {
-        position: absolute;
-        inset: 0;
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
-        z-index: 0;
-      }
-      .contact-images img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        min-width: 0;
-        opacity: 0.72;
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          #000 0%,
-          #000 42%,
-          transparent 100%
-        );
-        mask-image: linear-gradient(
-          to bottom,
-          #000 0%,
-          #000 42%,
-          transparent 100%
-        );
-      }
-      .contact-cta::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to bottom,
-          rgba(17, 17, 17, 0.08) 0%,
-          rgba(17, 17, 17, 0.25) 42%,
-          #111 100%
-        );
-        z-index: 1;
-      }
-      .contact-content {
-        position: relative;
-        z-index: 2;
-      }
-      .contact-cta h2 {
-        margin-bottom: 12px;
-        font-size: 36px;
-        letter-spacing: 5px;
-      }
-      .contact-cta p {
-        margin-bottom: 20px;
-        color: #ddd;
-        font-size: 14px;
-      }
-      .contact-button {
-        display: inline-block;
-        padding: 10px 20px;
-        color: #fff;
-        text-decoration: none;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border: 1px solid #fff;
-        transition: 0.3s;
-      }
-      .contact-button:hover {
-        background: #fff;
-        color: #111;
       }
 
-      footer {
-        margin-left: 0;
-        padding: 30px 20px;
-        background: #0d0d0d;
-        border-top: 1px solid #333;
-        color: #888;
-        text-align: center;
-        font-size: 14px;
-      }
-
-      #lightbox {
-        position: fixed;
-        inset: 0;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.96);
-        z-index: 999999;
-        cursor: zoom-out;
-      }
-      #lightbox.active {
-        display: flex;
-      }
-      #lightbox img {
-        max-width: 94vw;
-        max-height: 82vh;
-        object-fit: contain;
-      }
-      #close {
-        position: absolute;
-        top: 20px;
-        right: 35px;
-        color: #fff;
-        font-size: 50px;
-        font-weight: 300;
-        cursor: pointer;
-        line-height: 1;
-      }
       #photo-info {
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        color: #fff;
-        font-size: 13px;
-        line-height: 1.6;
-        opacity: 0.9;
-        white-space: nowrap;
-      }
-      #photo-title {
-        font-size: 18px;
-        font-weight: bold;
-      }
-      #photo-location,
-      #photo-details {
-        font-size: 12px;
+        white-space: normal;
+        width: 90%;
       }
 
       #to-top {
-        position: fixed;
-        right: 35px;
-        bottom: 35px;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(17, 17, 17, 0.9);
-        color: #fff;
-        border: 1px solid #666;
-        border-radius: 0;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(15px);
-        transition:
-          opacity 0.3s,
-          visibility 0.3s,
-          transform 0.3s;
-        z-index: 200;
+        right: 20px;
+        bottom: 20px;
       }
-      #to-top::before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-left: 9px solid transparent;
-        border-right: 9px solid transparent;
-        border-bottom: 14px solid currentColor;
-      }
-      #to-top.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      #to-top:hover {
-        background: #fff;
-        color: #111;
-        border-color: #fff;
-      }
-      #to-top span {
-        display: none;
-      }
+    }
+  </style>
+</head>
 
-      @keyframes drawSignature {
-        to {
-          stroke-dashoffset: 0;
-        }
-      }
-
-      /* ========================================
-   PAGE TRANSITION
-======================================== */
-
-      #page-transition {
-        position: fixed;
-        inset: 0;
-        background: #111;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        z-index: 999999;
-
-        transition:
-          opacity 0.3s ease,
-          visibility 0s linear 0.3s;
-      }
-
-      #page-transition.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-
-        transition: opacity 0.3s ease;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        #page-transition {
-          transition: none;
-        }
-      }
-
-      @media (max-width: 900px) {
-        #sidebar,
-        footer {
-          display: none;
-        }
-        main {
-          margin-left: 0;
-        }
-        .hero h1 {
-          font-size: 72px;
-          letter-spacing: 5px;
-        }
-        .hero p {
-          font-size: 12px;
-        }
-        .featured {
-          padding: 70px 25px 20px;
-        }
-        .feature-row,
-        .feature-row:nth-child(even) {
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-          margin-bottom: 75px;
-          align-items: stretch;
-        }
-        .feature-row:nth-child(even) .feature-image,
-        .feature-row:nth-child(even) .feature-copy {
-          order: initial;
-        }
-        .feature-copy h2 {
-          font-size: 28px;
-        }
-        .contact-cta {
-          height: 600px;
-          min-height: 600px;
-          padding: 50px 25px;
-        }
-        .contact-images {
-          grid-template-columns: repeat(4, 1fr);
-        }
-        #photo-info {
-          white-space: normal;
-          width: 90%;
-        }
-        #to-top {
-          right: 20px;
-          bottom: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="page-transition"></div>
-    <button id="to-top" aria-label="Back to top">
-      <span>Back to top</span>
-    </button>
-    <nav id="sidebar">
-      <div class="logo">
-        <svg
-          class="sidebar-signature"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="30 300 740 450"
-        >
-          <path
-            fill="none"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="
+<body>
+  <div id="page-transition"></div>
+  <button id="to-top" aria-label="Back to top">
+    <span>Back to top</span>
+  </button>
+  <nav id="sidebar">
+    <div class="logo">
+      <svg class="sidebar-signature" xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450">
+        <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
 M171.707550,499.393555 
 	C152.434036,489.920746 140.949142,474.638763 138.377808,453.950806 
 	C136.029053,435.053833 140.001007,416.800476 150.112656,400.358856 
@@ -641,15 +684,8 @@ M584.417847,452.917297
 	C582.997375,453.567627 581.199951,453.502441 580.199402,455.056274 
 	C588.476440,459.510010 592.033630,458.132233 594.496948,449.246765 
 	C591.226135,450.430573 588.169006,451.537048 584.417847,452.917297 
-z"
-          />
-          <path
-            fill="none"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="
+z" />
+        <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
 M253.434601,715.462219 
 	C244.257065,722.138794 235.398911,728.651428 226.425323,735.000977 
 	C223.264969,737.237122 219.817642,738.888062 215.673813,737.591064 
@@ -731,16 +767,13 @@ M317.022888,613.231079
 	C355.628418,553.613403 351.778290,550.199585 347.713440,547.819214 
 	C340.192902,543.415161 331.494995,541.475342 322.145294,539.798279 
 	C320.441895,564.307678 318.774109,588.305115 317.022888,613.231079 
-z"
-          />
-        </svg>
-      </div>
-    </nav>
-    <main>
-      <section class="hero">
-        <div
-          class="hero-slideshow"
-          style="
+z" />
+      </svg>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="hero-slideshow" style="
             position: absolute;
             top: 0;
             left: 0;
@@ -749,13 +782,8 @@ z"
             overflow: hidden;
             z-index: 0;
             background: #111;
-          "
-        >
-          <img
-            class="slide active"
-            src="Images/gallery/photo2.JPG"
-            alt=""
-            style="
+          ">
+        <img class="slide active" src="Images/gallery/photo2.JPG" alt="" style="
               position: absolute;
               top: 0;
               left: 0;
@@ -765,14 +793,9 @@ z"
               filter: grayscale(100%);
               opacity: 1;
               transition: opacity 1.5s ease-in-out;
-            "
-          />
+            " />
 
-          <img
-            class="slide"
-            src="Images/gallery/photo18.jpg"
-            alt=""
-            style="
+        <img class="slide" src="Images/gallery/photo18.jpg" alt="" style="
               position: absolute;
               top: 0;
               left: 0;
@@ -782,14 +805,9 @@ z"
               filter: grayscale(100%);
               opacity: 0;
               transition: opacity 1.5s ease-in-out;
-            "
-          />
+            " />
 
-          <img
-            class="slide"
-            src="Images/gallery/photo19.JPG"
-            alt=""
-            style="
+        <img class="slide" src="Images/gallery/photo19.JPG" alt="" style="
               position: absolute;
               top: 0;
               left: 0;
@@ -799,14 +817,9 @@ z"
               filter: grayscale(100%);
               opacity: 0;
               transition: opacity 1.5s ease-in-out;
-            "
-          />
+            " />
 
-          <img
-            class="slide"
-            src="Images/gallery/photo4.JPG"
-            alt=""
-            style="
+        <img class="slide" src="Images/gallery/photo4.JPG" alt="" style="
               position: absolute;
               top: 0;
               left: 0;
@@ -816,14 +829,9 @@ z"
               filter: grayscale(100%);
               opacity: 0;
               transition: opacity 1.5s ease-in-out;
-            "
-          />
+            " />
 
-          <img
-            class="slide"
-            src="Images/gallery/photo31.JPG"
-            alt=""
-            style="
+        <img class="slide" src="Images/gallery/photo31.JPG" alt="" style="
               position: absolute;
               top: 0;
               left: 0;
@@ -833,13 +841,11 @@ z"
               filter: grayscale(100%);
               opacity: 0;
               transition: opacity 1.5s ease-in-out;
-            "
-          />
-        </div>
+            " />
+      </div>
 
-        <!-- Dark overlay -->
-        <div
-          style="
+      <!-- Dark overlay -->
+      <div style="
             position: absolute;
             top: 0;
             left: 0;
@@ -848,13 +854,10 @@ z"
             background: rgba(0, 0, 0, 0.42);
             z-index: 1;
             pointer-events: none;
-          "
-        ></div>
+          "></div>
 
-        <!-- Welcome text -->
-        <div
-          class="hero-content"
-          style="
+      <!-- Welcome text -->
+      <div class="hero-content" style="
             position: absolute;
             top: 50%;
             left: 50%;
@@ -862,245 +865,233 @@ z"
             z-index: 2;
             width: 100%;
             text-align: center;
-          "
-        >
-          <h1>WELCOME</h1>
-          <p>Photography by Carson Dibb</p>
-        </div>
-
-        <div class="scroll-indicator">
-          <span>SCROLL TO EXPLORE</span>
-          <div class="scroll-line"></div>
-        </div>
-      </section>
-
-      <script>
-        const slides = document.querySelectorAll(".hero .slide");
-        const scrollIndicator = document.querySelector(".scroll-indicator");
-        const featuredSection = document.querySelector(".featured");
-
-        let currentSlide = 0;
-
-        /* HERO SLIDESHOW */
-        setInterval(() => {
-          slides[currentSlide].style.opacity = "0";
-
-          currentSlide = (currentSlide + 1) % slides.length;
-
-          slides[currentSlide].style.opacity = "1";
-        }, 2500);
-
-        /* SCROLL TO EXPLORE */
-        scrollIndicator.addEventListener("click", () => {
-          window.scrollTo({
-            top: window.innerHeight,
-            behavior: "smooth",
-          });
-        });
-
-        /* FADE INDICATOR WHEN SCROLLING */
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-            scrollIndicator.style.opacity = "0";
-            scrollIndicator.style.pointerEvents = "none";
-          } else {
-            scrollIndicator.style.opacity = "1";
-            scrollIndicator.style.pointerEvents = "auto";
-          }
-        });
-        /* ========================================
-   PAGE TRANSITION
-======================================== */
-
-        const pageTransition = document.getElementById("page-transition");
-
-        document.addEventListener("click", (event) => {
-          const link = event.target.closest("a[href]");
-
-          if (!link) return;
-
-          const href = link.getAttribute("href");
-
-          if (
-            !href ||
-            href.startsWith("#") ||
-            href.startsWith("mailto:") ||
-            href.startsWith("tel:") ||
-            link.target === "_blank" ||
-            link.hasAttribute("download")
-          ) {
-            return;
-          }
-
-          const url = new URL(href, window.location.href);
-
-          if (url.origin !== window.location.origin) {
-            return;
-          }
-
-          event.preventDefault();
-
-          pageTransition.classList.add("active");
-
-          setTimeout(() => {
-            window.location.href = url.href;
-          }, 300);
-        });
-
-        window.addEventListener("pageshow", () => {
-          pageTransition.classList.remove("active");
-        });
-      </script>
-      <section class="featured">
-        <div class="section-label">SELECTED WORK</div>
-
-        <article class="feature-row">
-          <div
-            class="feature-image"
-            data-title="4th of July Fireworks"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/8 • 13s • ISO 100"
-          >
-            <img
-              src="Images/gallery/photo1.JPG"
-              alt="4th of July Fireworks"
-            />
-          </div>
-          <div class="feature-copy">
-            <div class="photo-number">01 / 03</div>
-            <h2>"Fireworks" -4th of July</h2>
-            <div class="meta">
-              Kaysville, Utah<br />Canon EOS R8 · 50mm · f/8 · 13s · ISO 100
-            </div>
-            <p class="description">
-              A study of light, timing, and atmosphere captured during a 4th of
-              July celebration in Kaysville.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div
-            class="feature-image"
-            data-title="Rave - Private Party"
-            data-location="Spanish Fork, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/30s • ISO 2075"
-          >
-            <img
-              src="Images/gallery/photo30.jpg"
-              alt="Rave - Private Party"
-            />
-          </div>
-          <div class="feature-copy">
-            <div class="photo-number">02 / 03</div>
-            <h2>"Rave" - Private Party</h2>
-            <div class="meta">
-              Spanish Fork, Utah<br />Canon EOS R8 · 50mm · f/1.8 · 1/30s · ISO
-              2075
-            </div>
-            <p class="description">
-              Color, motion, and low-light energy come together in a candid
-              frame from a private event.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature-row">
-          <div
-            class="feature-image"
-            data-title="PunkoFest - Indie Rock Concert"
-            data-location="Provo, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/4.5 • 1/4000s • ISO 20000"
-          >
-            <img
-              src="Images/gallery/photo10.jpeg"
-              alt="PunkoFest - Indie Rock Concert"
-            />
-          </div>
-          <div class="feature-copy">
-            <div class="photo-number">03 / 03</div>
-            <h2>"PunkoFest" - Indie Rock Concert</h2>
-            <div class="meta">
-              Provo, Utah<br />Canon EOS R8 · 50mm · f/4.5 · 1/4000s · ISO 20000
-            </div>
-            <p class="description">
-              An energetic concert photograph focused on movement, stage
-              presence, and the intensity of live performance.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <section class="contact-cta">
-        <div class="contact-images">
-          <img src="Images/gallery/photo4.JPG" alt="" />
-          <img src="Images/gallery/photo5.JPG" alt="" />
-          <img src="Images/gallery/photo29.jpg" alt="" />
-          <img src="Images/gallery/photo28.JPG" alt="" />
-        </div>
-        <div class="contact-content">
-          <h2>Visit my Gallery</h2>
-          <a href="gallery.html" class="contact-button">Gallery</a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>
-        &copy; 2026 Carson Dibb. Website designed and developed by Carson Dibb.
-      </p>
-    </footer>
-
-    <div id="lightbox" aria-hidden="true">
-      <span id="close" aria-label="Close">&times;</span>
-      <img id="lightbox-img" alt="" />
-      <div id="photo-info">
-        <div id="photo-title"></div>
-        <div id="photo-location"></div>
-        <div id="photo-details"></div>
+          ">
+        <h1>WELCOME</h1>
+        <p>Photography by Carson Dibb</p>
       </div>
-    </div>
+
+      <div class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
     <script>
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const title = document.getElementById("photo-title");
-      const locationText = document.getElementById("photo-location");
-      const details = document.getElementById("photo-details");
+      const slides = document.querySelectorAll(".hero .slide");
+      const scrollIndicator = document.querySelector(".scroll-indicator");
+      const featuredSection = document.querySelector(".featured");
 
-      document.querySelectorAll(".feature-image").forEach((card) => {
-        card.addEventListener("click", () => {
-          const img = card.querySelector("img");
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          title.textContent = card.dataset.title;
-          locationText.textContent = card.dataset.location;
-          details.textContent = card.dataset.details;
-          lightbox.classList.add("active");
-          lightbox.setAttribute("aria-hidden", "false");
-          document.body.style.overflow = "hidden";
+      let currentSlide = 0;
+
+      /* HERO SLIDESHOW */
+      setInterval(() => {
+        slides[currentSlide].style.opacity = "0";
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].style.opacity = "1";
+      }, 2500);
+
+      /* SCROLL TO EXPLORE */
+      scrollIndicator.addEventListener("click", () => {
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: "smooth",
         });
       });
 
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      }
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox || e.target.id === "close") closeLightbox();
+      /* FADE INDICATOR WHEN SCROLLING */
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          scrollIndicator.style.opacity = "0";
+          scrollIndicator.style.pointerEvents = "none";
+        } else {
+          scrollIndicator.style.opacity = "1";
+          scrollIndicator.style.pointerEvents = "auto";
+        }
       });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
+      /* ========================================
+ PAGE TRANSITION
+======================================== */
+
+      const pageTransition = document.getElementById("page-transition");
+
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest("a[href]");
+
+        if (!link) return;
+
+        const href = link.getAttribute("href");
+
+        if (
+          !href ||
+          href.startsWith("#") ||
+          href.startsWith("mailto:") ||
+          href.startsWith("tel:") ||
+          link.target === "_blank" ||
+          link.hasAttribute("download")
+        ) {
+          return;
+        }
+
+        const url = new URL(href, window.location.href);
+
+        if (url.origin !== window.location.origin) {
+          return;
+        }
+
+        event.preventDefault();
+
+        pageTransition.classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = url.href;
+        }, 300);
       });
 
-      const toTop = document.getElementById("to-top");
-      window.addEventListener("scroll", () =>
-        toTop.classList.toggle("visible", window.scrollY > 500),
-      );
-      toTop.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" }),
-      );
+      window.addEventListener("pageshow", () => {
+        pageTransition.classList.remove("active");
+      });
     </script>
-  </body>
+    <section class="featured">
+      <div class="section-label">SELECTED WORK</div>
+
+      <article class="feature-row">
+        <div class="feature-image" data-title="4th of July Fireworks" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/8 • 13s • ISO 100">
+          <img src="Images/gallery/photo1.JPG" alt="4th of July Fireworks" />
+        </div>
+        <div class="feature-copy">
+          <div class="photo-number">01 / 03</div>
+          <h2>"Fireworks" -4th of July</h2>
+          <div class="meta">
+            Kaysville, Utah<br />Canon EOS R8 · 50mm · f/8 · 13s · ISO 100
+          </div>
+          <p class="description">
+            Taken at a local fireworks show. This photograph uses a long-exposure technique to capture the movement and
+            full trajectory of fireworks
+            rather than freezing a single moment. The extended shutter speed allows each burst to form continuous trails
+            of light, creating a sense of motion and depth within the frame.
+            Unlike eyesight, a camera shutter can capture entire periods of time into one singular shot.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature-row">
+        <div class="feature-image" data-title="Rave - Private Party" data-location="Spanish Fork, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/30s • ISO 2075">
+          <img src="Images/gallery/photo30.jpg" alt="Rave - Private Party" />
+        </div>
+        <div class="feature-copy">
+          <div class="photo-number">02 / 03</div>
+          <h2>"Catch" - Fremont Football Stadium</h2>
+          <div class="meta">
+            Fremont, Utah<br />Canon EOS R8 · 50mm · f/3.2 · 1/640s · ISO 640
+          </div>
+          <p class="description">
+            This photograph captures a touchdown catch from an unusually close perspective. Rather than using a
+            traditional telephoto sports lens, I used a 50mm prime, which required me to gamble a position and
+            anticipate the play before it developed. Access to the field was made possible through a
+            school yearbook press pass, allowing me to photograph the game from a perspective normally unavailable from
+            the
+            stands.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature-row">
+        <div class="feature-image" data-title="PunkoFest - Indie Rock Concert" data-location="Provo, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/4.5 • 1/4000s • ISO 20000">
+          <img src="Images/gallery/photo10.jpeg" alt="PunkoFest - Indie Rock Concert" />
+        </div>
+        <div class="feature-copy">
+          <div class="photo-number">03 / 03</div>
+          <h2>"Jersey Modeling" - University of Utah</h2>
+          <div class="meta">
+            Provo, Utah<br />Canon EOS R8 · 50mm · f/4.5 · 1/4000s · ISO 20000
+          </div>
+          <p class="description">
+            This photoshoot combined product design, apparel manufacturing, and experimental portrait photography on the
+            University of Utah campus. I designed and manufactured a custom Ute jersey, then
+            photographed it at the University’s iconic “U” as the backdrop at sunset. I experimented
+            with a soft handheld flash to balance the warm ambient light with controlled illumination on the subject,
+            creating separation while maintaining the atmosphere of the campus.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-cta">
+      <div class="contact-images">
+        <img src="Images/gallery/photo4.JPG" alt="" />
+        <img src="Images/gallery/photo5.JPG" alt="" />
+        <img src="Images/gallery/photo29.jpg" alt="" />
+        <img src="Images/gallery/photo28.JPG" alt="" />
+      </div>
+      <div class="contact-content">
+        <h2>Visit my Gallery</h2>
+        <a href="gallery.html" class="contact-button">Gallery</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 Carson Dibb. Website designed and developed by Carson Dibb.
+    </p>
+  </footer>
+
+  <div id="lightbox" aria-hidden="true">
+    <span id="close" aria-label="Close">&times;</span>
+    <img id="lightbox-img" alt="" />
+    <div id="photo-info">
+      <div id="photo-title"></div>
+      <div id="photo-location"></div>
+      <div id="photo-details"></div>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const title = document.getElementById("photo-title");
+    const locationText = document.getElementById("photo-location");
+    const details = document.getElementById("photo-details");
+
+    document.querySelectorAll(".feature-image").forEach((card) => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img");
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        title.textContent = card.dataset.title;
+        locationText.textContent = card.dataset.location;
+        details.textContent = card.dataset.details;
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.id === "close") closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    const toTop = document.getElementById("to-top");
+    window.addEventListener("scroll", () =>
+      toTop.classList.toggle("visible", window.scrollY > 500),
+    );
+    toTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" }),
+    );
+  </script>
+</body>
+
 </html>
