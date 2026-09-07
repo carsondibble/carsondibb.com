@@ -1,35 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="UTF-8" />
 
-    <title>Carson Dibb | Contact</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="contact.css" />
-  </head>
+	<title>Carson Dibb | Contact</title>
 
-  <body>
-    <!-- Sidebar -->
+	<link rel="stylesheet" href="contact.css" />
+</head>
 
-    <nav id="sidebar">
-      <a href="index.html" class="logo">
-        <svg
-          class="sidebar-signature"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="30 300 740 450"
-        >
-          class="signature" version="1.1" id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450"
-          xml:space="preserve" >
-          <path
-            fill="none"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="
+<body>
+	<!-- Sidebar -->
+
+	<nav id="sidebar">
+		<a href="index.html" class="logo">
+			<svg class="sidebar-signature" xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450">
+				class="signature" version="1.1" id="Layer_1"
+				xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450"
+				xml:space="preserve" >
+				<path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
 M171.707550,499.393555 
 	C152.434036,489.920746 140.949142,474.638763 138.377808,453.950806 
 	C136.029053,435.053833 140.001007,416.800476 150.112656,400.358856 
@@ -131,15 +122,8 @@ M584.417847,452.917297
 	C582.997375,453.567627 581.199951,453.502441 580.199402,455.056274 
 	C588.476440,459.510010 592.033630,458.132233 594.496948,449.246765 
 	C591.226135,450.430573 588.169006,451.537048 584.417847,452.917297 
-z"
-          />
-          <path
-            fill="none"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="
+z" />
+				<path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
 M253.434601,715.462219 
 	C244.257065,722.138794 235.398911,728.651428 226.425323,735.000977 
 	C223.264969,737.237122 219.817642,738.888062 215.673813,737.591064 
@@ -221,126 +205,118 @@ M317.022888,613.231079
 	C355.628418,553.613403 351.778290,550.199585 347.713440,547.819214 
 	C340.192902,543.415161 331.494995,541.475342 322.145294,539.798279 
 	C320.441895,564.307678 318.774109,588.305115 317.022888,613.231079 
-z"
-          />
-        </svg>
+z" />
+			</svg>
 
-        <span>CARSON<br />DIBB</span>
-      </a>
-    </nav>
+			<span>CARSON<br />DIBB</span>
+		</a>
+	</nav>
 
-    <!-- Background Video -->
+	<!-- Background Video -->
 
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="../videos/contact-background.mp4" type="video/mp4" />
-      </video>
+	<div class="video-container">
+		<video autoplay muted loop playsinline>
+			<source src="../videos/contact-background.mp4" type="video/mp4" />
+		</video>
 
-      <div class="video-overlay"></div>
-    </div>
+		<div class="video-overlay"></div>
+	</div>
 
-    <!-- Background Photo Slideshow -->
+	<!-- Background Photo Slideshow -->
 
-    <div class="photo-background">
-      <div class="photo-slide"></div>
-    </div>
+	<div class="photo-background">
+		<div class="photo-slide"></div>
+	</div>
 
-    <!-- Contact Content -->
+	<!-- Contact Content -->
 
-    <main class="contact-content">
-      <div class="contact-box">
-        <h1>CONTACT</h1>
+	<main class="contact-content">
+		<div class="contact-box">
+			<h1>CONTACT</h1>
 
-        <p>
-          I am always interested in collaborating on engineering, design,
-          photography, and creative projects.
-        </p>
+			<p>
+				I am always interested in collaborating on engineering, design,
+				photography, and creative projects.
+			</p>
 
-        <form action="https://formsubmit.co/carsondibb@gmail.com" method="POST">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Name*" required />
+			<form action="https://formsubmit.co/carsondibb@gmail.com" method="POST">
 
-            <input type="email" name="email" placeholder="Email*" required />
-          </div>
+				<input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+				<input type="hidden" name="_captcha" value="false">
+				<input type="hidden" name="_next" value="thank-you.html" />
 
-          <textarea name="message" placeholder="Content"></textarea>
+				<div class="form-row">
+					<input type="text" name="name" placeholder="Name*" required>
 
-          <button type="submit">SUBMIT</button>
+					<input type="email" name="email" placeholder="Email*" required>
+				</div>
 
-          <p class="contact-note">
-            You can also contact me through
-            <a href="https://www.instagram.com/carsondibb/" target="_blank"
-              >Instagram</a
-            >
-            or
-            <a href="mailto:carsondibb@gmail.com">Email</a>
-            directly
-          </p>
+				<textarea name="message" placeholder="Content"></textarea>
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Portfolio Contact Form Submission"
-          />
+				<button type="submit">SUBMIT</button>
 
-          <input type="hidden" name="_captcha" value="false" />
+				<p class="contact-note">
+					You can also contact me through
+					<a href="https://www.instagram.com/carsondibb/" target="_blank">
+						Instagram
+					</a>
+					or
+					<a href="mailto:carsondibb@gmail.com">Email</a>
+					directly
+				</p>
 
-          <input
-            type="hidden"
-            name="_next"
-            value="thank-you.html"
-          />
-        </form>
-      </div>
-    </main>
+			</form>
+		</div>
+	</main>
 
-    <footer>
-      <p>
-        &copy; 2026 Carson Dibb. Website designed and developed by Carson Dibb.
-      </p>
-    </footer>
+	<footer>
+		<p>
+			&copy; 2026 Carson Dibb. Website designed and developed by Carson Dibb.
+		</p>
+	</footer>
 
-    <script>
-      const sidebar = document.getElementById("sidebar");
+	<script>
+		const sidebar = document.getElementById("sidebar");
 
-      window.addEventListener("load", () => {
-        sidebar.classList.add("visible");
-      });
+		window.addEventListener("load", () => {
+			sidebar.classList.add("visible");
+		});
 
-      const textarea = document.querySelector("textarea");
+		const textarea = document.querySelector("textarea");
 
-      textarea.addEventListener("input", () => {
-        textarea.style.height = "auto";
-        textarea.style.height = textarea.scrollHeight + "px";
-      });
+		textarea.addEventListener("input", () => {
+			textarea.style.height = "auto";
+			textarea.style.height = textarea.scrollHeight + "px";
+		});
 
-      const photos = [
-        "../images/contact1.jpg",
-        "../images/contact2.jpg",
-        "../images/contact3.jpg",
-        "../images/contact4.jpg",
-        "../images/contact5.jpg",
-      ];
+		const photos = [
+			"../images/contact1.jpg",
+			"../images/contact2.jpg",
+			"../images/contact3.jpg",
+			"../images/contact4.jpg",
+			"../images/contact5.jpg",
+		];
 
-      const slide = document.querySelector(".photo-slide");
+		const slide = document.querySelector(".photo-slide");
 
-      let index = 0;
+		let index = 0;
 
-      function changePhoto() {
-        slide.style.backgroundImage = `url(${photos[index]})`;
+		function changePhoto() {
+			slide.style.backgroundImage = `url(${photos[index]})`;
 
-        slide.classList.add("active");
+			slide.classList.add("active");
 
-        setTimeout(() => {
-          slide.classList.remove("active");
-        }, 4000);
+			setTimeout(() => {
+				slide.classList.remove("active");
+			}, 4000);
 
-        index = (index + 1) % photos.length;
-      }
+			index = (index + 1) % photos.length;
+		}
 
-      changePhoto();
+		changePhoto();
 
-      setInterval(changePhoto, 6000);
-    </script>
-  </body>
+		setInterval(changePhoto, 6000);
+	</script>
+</body>
+
 </html>
