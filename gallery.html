@@ -1,33 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="favicon.png">
 
-    <title>Gallery | Carson Dibb</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="favicon.png">
 
-    <link rel="stylesheet" href="gallery.css" />
-  </head>
+  <title>Gallery | Carson Dibb</title>
 
-  <button id="to-top" aria-label="Back to top">↑</button>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
 
-  <body>
-    <nav id="sidebar">
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <svg
-            class="sidebar-signature"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="30 300 740 450"
-          >
-            <path
-              fill="none"
-              stroke="white"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="
+<button id="to-top" aria-label="Back to top">↑</button>
+
+<body>
+  <nav id="sidebar">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <svg class="sidebar-signature" xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450">
+          <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
             M171.707550,499.393555 
 	          C152.434036,489.920746 140.949142,474.638763 138.377808,453.950806 
 	          C136.029053,435.053833 140.001007,416.800476 150.112656,400.358856 
@@ -129,15 +120,8 @@ M584.417847,452.917297
 	C582.997375,453.567627 581.199951,453.502441 580.199402,455.056274 
 	C588.476440,459.510010 592.033630,458.132233 594.496948,449.246765 
 	C591.226135,450.430573 588.169006,451.537048 584.417847,452.917297 
-z"
-            />
-            <path
-              fill="none"
-              stroke="white"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="
+z" />
+          <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
 M253.434601,715.462219 
 	C244.257065,722.138794 235.398911,728.651428 226.425323,735.000977 
 	C223.264969,737.237122 219.817642,738.888062 215.673813,737.591064 
@@ -219,480 +203,354 @@ M317.022888,613.231079
 	C355.628418,553.613403 351.778290,550.199585 347.713440,547.819214 
 	C340.192902,543.415161 331.494995,541.475342 322.145294,539.798279 
 	C320.441895,564.307678 318.774109,588.305115 317.022888,613.231079 
-z"
-            />
-          </svg>
-          <span class="signature-text">Carson <br />Dibb</span>
-        </a>
-      </div>
-    </nav>
+z" />
+        </svg>
+        <span class="signature-text">Carson <br />Dibb</span>
+      </a>
+    </div>
+  </nav>
 
-    <main>
-      <h1 class="page-title">GALLERY</h1>
+  <main>
+    <h1 class="page-title">GALLERY</h1>
 
-      <div class="gallery">
-        <!-- Copy this block 20 times -->
+    <div class="gallery">
+      <!-- Copy this block 20 times -->
 
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo1.JPG"
-            data-title="4th of July Fireworks"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/8 • 13s • ISO 100"
-          />
+      <div class="gallery-item">
+        <img src="Images/gallery/photo1.JPG" data-title="4th of July Fireworks" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/8 • 13s • ISO 100" />
 
-          <div class="overlay">Fireworks - 4th of July Event</div>
-          <div class="photo-number">1/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo2.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Rave - Private Party"
-            data-location="Spanish Fork, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/30s • ISO 2075"
-          />
-          <div class="overlay">Rave - Private Party</div>
-          <div class="photo-number">2/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo3.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Corvette - Car Show"
-            data-location="Sandy, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/1500s • ISO 100"
-          />
-          <div class="overlay">Corvette - Car Show</div>
-          <div class="photo-number">3/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo4.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="PunkoFest - Indie Rock Concert  "
-            data-location="Provo, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/4.5 • 1/4000s • ISO 20000"
-          />
-          <div class="overlay">Punkofest - Indie Rock Concert</div>
-          <div class="photo-number">4/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo5.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Bareback - Days of 47 Rodeo"
-            data-location="Salt Lake City, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/6.3 • 1/160s • ISO 2500"
-          />
-          <div class="overlay">Bareback - Days of 47 Rodeo</div>
-          <div class="photo-number">5/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo6.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="VCD Professional Party - Provo City"
-            data-location="Provo, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/160s • ISO 160"
-          />
-          <div class="overlay">VCD Professional Party - Provo City</div>
-          <div class="photo-number">6/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo7.jpeg"
-            onclick="openLightbox(this.src)"
-            data-title="Jersey Shoot - The U"
-            data-location="Salt Lake (University of Utah), Utah"
-            data-details="© Carson Dibb • Sony ILCE-6100 • 50mm f/4 • 1/30s • ISO 1250"
-          />
-          <div class="overlay">Jersey Shoot - University of Utah</div>
-          <div class="photo-number">7/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo8.jpeg"
-            onclick="openLightbox(this.src)"
-            data-title="Dartman Mascot Shoot - Davis High School"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 55mm f/3.5 • 1/200s • ISO 100"
-          />
-          <div class="overlay">Dartman Mascot Shoot - Davis High School</div>
-          <div class="photo-number">8/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo9.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Swing - Country Dance Venue"
-            data-location="Orem, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/14 • 1/30s • ISO 32000"
-          />
-          <div class="overlay">Swing - Country Dance Venue</div>
-          <div class="photo-number">9/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo10.jpeg"
-            onclick="openLightbox(this.src)"
-            data-title="Jersey Shoot Landscape - The U"
-            data-location="Salt Lacke City (University of Utah), Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/200s • ISO 800"
-          />
-          <div class="overlay">Jersey Shoot Landscape - The U</div>
-          <div class="photo-number">10/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo11.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Baseball Derby - Local Park"
-            data-location="Layton, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/8000s • ISO 5000"
-          />
-          <div class="overlay">Baseball Derby - Local Park</div>
-          <div class="photo-number">11/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo12.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Horseback - Local Ranch"
-            data-location="Farmington, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/1000s • ISO 500"
-          />
-          <div class="overlay">Horseback - Local Ranch</div>
-          <div class="photo-number">12/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo13.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Goodness - Private Event"
-            data-location="Cedar City, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/6.3 • 1/250s • ISO 6400"
-          />
-          <div class="overlay">Goodness - Private Event</div>
-          <div class="photo-number">13/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo14.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Portrait - Salt Flats"
-            data-location="Wendover, Utah"
-            data-details="© Carson Dibb • Nikon D3100 • 82mm f/5.6 • 1/400s • ISO 800"
-          />
-          <div class="overlay">Portrait - Salt Flats</div>
-          <div class="photo-number">14/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo15.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Love - Private Event"
-            data-location="Provo, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/500s • ISO 6400"
-          />
-          <div class="overlay">Love - Private Event</div>
-          <div class="photo-number">15/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo16.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Comic Photoshoot - Davis High"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Nikon D3100 • 50mm f/6.3 • 1/640s • ISO 800"
-          />
-          <div class="overlay">Comic Photoshoot - Davis High</div>
-          <div class="photo-number">16/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo17.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Lacrosse Action - Davis High Stadium"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Nikon D700 • 190mm f/4 • 1/2500s • ISO 200"
-          />
-          <div class="overlay">Lacrosse Action - Davis High Stadium</div>
-          <div class="photo-number">17/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo18.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Lacrosse Portrait - Davis High Stadium"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Nikon D700 • 135mm f/4 • 1/2500s • ISO 280"
-          />
-          <div class="overlay">Lacrosse Portrait - Davis High Stadium</div>
-          <div class="photo-number">18/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo19.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Sparkler Signature - Salt Flats"
-            data-location="Wendover, Utah"
-            data-details="© Carson Dibb • Nikon D3100 • 50mm f/4 • 6s • ISO 280"
-          />
-          <div class="overlay">Sparkler Signature - Salt Flats</div>
-          <div class="photo-number">19/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo20.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Portrait - Farmington Preserve"
-            data-location="Farmington, Utah"
-            data-details="© Carson Dibb • Canon • 50mm f/1.8 • 1/800s • ISO 100"
-          />
-          <div class="overlay">Portrait - Farmington Preserve</div>
-          <div class="photo-number">20/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo21.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Garage - Bountiful"
-            data-location="Bountiful, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/2.5 • 1/1250s • ISO 4000"
-          />
-          <div class="overlay">Garage - Bountiful</div>
-          <div class="photo-number">21/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo22.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Graduates - Davis High D"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/2500s • ISO 1600"
-          />
-          <div class="overlay">Graduates - Davis High D</div>
-          <div class="photo-number">22/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo23.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Swing - Bear Lake"
-            data-location="Garden City, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/8000s • ISO 400"
-          />
-          <div class="overlay">Swing - Bear Lake</div>
-          <div class="photo-number">23/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo24.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Basketball - Davis High"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Nikon D3100 • 61mm f/4.2 • 1/250s • ISO 3200"
-          />
-          <div class="overlay">Basketball - Davis High</div>
-          <div class="photo-number">24/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo25.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Santa - Event Photoshoot"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Nikon D3100 • 28mm f/5 • 1/200s • ISO 100"
-          />
-          <div class="overlay">Santa - Event Photoshoot</div>
-          <div class="photo-number">25/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo26.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Portrait - Capitol"
-            data-location="Salt Lake City, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/400s • ISO 25600"
-          />
-          <div class="overlay">Portrait - Capitol</div>
-          <div class="photo-number">26/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo27.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Throw - Mountain Ridge Stadium"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 50mm f/5.6 • 1/640s • ISO 5000"
-          />
-          <div class="overlay">Throw - Mountain Ridge Stadium</div>
-          <div class="photo-number">27/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo28.JPG"
-            onclick="openLightbox(this.src)"
-            data-title="Skate - University of Utah Huntsman Center"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 300mm f/1.8 • 1/1250s • ISO 9800"
-          />
-          <div class="overlay">Skate - University of Utah Huntsman Center</div>
-          <div class="photo-number">28/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo29.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Glide - Davis High Stadium"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 190mm f/5.6 • 1/400s • ISO 320"
-          />
-          <div class="overlay">Glide - Davis High Stadium</div>
-          <div class="photo-number">29/30</div>
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="Images/gallery/photo30.jpg"
-            onclick="openLightbox(this.src)"
-            data-title="Catch - Fremont Stadium"
-            data-location="Kaysville, Utah"
-            data-details="© Carson Dibb • Canon EOS R8 • 300mm f/5.6 • 1/640s • ISO 5000"
-          />
-          <div class="overlay">Catch - Fremont Stadium</div>
-          <div class="photo-number">30/30</div>
-        </div>
+        <div class="overlay">Fireworks - 4th of July Event</div>
+        <div class="photo-number">1/30</div>
       </div>
 
-      <section class="contact-cta">
-        <h2>CONTACT</h2>
-        <p>Contact me for a photoshoot or project collaboration.</p>
+      <div class="gallery-item">
+        <img src="Images/gallery/photo2.JPG" onclick="openLightbox(this.src)" data-title="Rave - Private Party"
+          data-location="Spanish Fork, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/30s • ISO 2075" />
+        <div class="overlay">Rave - Private Party</div>
+        <div class="photo-number">2/30</div>
+      </div>
 
-        <a href="contact.html" class="contact-button"> Get in Touch </a>
-      </section>
-    </main>
+      <div class="gallery-item">
+        <img src="Images/gallery/photo3.JPG" onclick="openLightbox(this.src)" data-title="Corvette - Car Show"
+          data-location="Sandy, Utah" data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/1500s • ISO 100" />
+        <div class="overlay">Corvette - Car Show</div>
+        <div class="photo-number">3/30</div>
+      </div>
 
-    <footer>
-      <p>
-        &copy; 2026 Carson Dibb. Website designed and developed by Carson Dibb.
-      </p>
-    </footer>
+      <div class="gallery-item">
+        <img src="Images/gallery/photo4.JPG" onclick="openLightbox(this.src)"
+          data-title="PunkoFest - Indie Rock Concert  " data-location="Provo, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/4.5 • 1/4000s • ISO 20000" />
+        <div class="overlay">Punkofest - Indie Rock Concert</div>
+        <div class="photo-number">4/30</div>
+      </div>
 
-    <div id="lightbox">
-      <div class="lightbox-content">
-        <img id="lightbox-img" />
+      <div class="gallery-item">
+        <img src="Images/gallery/photo5.JPG" onclick="openLightbox(this.src)" data-title="Bareback - Days of 47 Rodeo"
+          data-location="Salt Lake City, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/6.3 • 1/160s • ISO 2500" />
+        <div class="overlay">Bareback - Days of 47 Rodeo</div>
+        <div class="photo-number">5/30</div>
+      </div>
 
-        <div id="photo-info">
-          <div id="photo-title"></div>
-          <div id="photo-location"></div>
-          <div id="photo-details"></div>
-        </div>
+      <div class="gallery-item">
+        <img src="Images/gallery/photo6.JPG" onclick="openLightbox(this.src)"
+          data-title="VCD Professional Party - Provo City" data-location="Provo, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/160s • ISO 160" />
+        <div class="overlay">VCD Professional Party - Provo City</div>
+        <div class="photo-number">6/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo7.jpeg" onclick="openLightbox(this.src)" data-title="Jersey Shoot - The U"
+          data-location="Salt Lake (University of Utah), Utah"
+          data-details="© Carson Dibb • Sony ILCE-6100 • 50mm f/4 • 1/30s • ISO 1250" />
+        <div class="overlay">Jersey Shoot - University of Utah</div>
+        <div class="photo-number">7/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo8.jpeg" onclick="openLightbox(this.src)"
+          data-title="Dartman Mascot Shoot - Davis High School" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 55mm f/3.5 • 1/200s • ISO 100" />
+        <div class="overlay">Dartman Mascot Shoot - Davis High School</div>
+        <div class="photo-number">8/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo9.JPG" onclick="openLightbox(this.src)" data-title="Swing - Country Dance Venue"
+          data-location="Orem, Utah" data-details="© Carson Dibb • Canon EOS R8 • 50mm f/14 • 1/30s • ISO 32000" />
+        <div class="overlay">Swing - Country Dance Venue</div>
+        <div class="photo-number">9/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo10.jpeg" onclick="openLightbox(this.src)"
+          data-title="Jersey Shoot Landscape - The U" data-location="Salt Lacke City (University of Utah), Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/200s • ISO 800" />
+        <div class="overlay">Jersey Shoot Landscape - The U</div>
+        <div class="photo-number">10/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo11.JPG" onclick="openLightbox(this.src)" data-title="Baseball Derby - Local Park"
+          data-location="Layton, Utah" data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/8000s • ISO 5000" />
+        <div class="overlay">Baseball Derby - Local Park</div>
+        <div class="photo-number">11/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo12.JPG" onclick="openLightbox(this.src)" data-title="Horseback - Local Ranch"
+          data-location="Farmington, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/1000s • ISO 500" />
+        <div class="overlay">Horseback - Local Ranch</div>
+        <div class="photo-number">12/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo13.JPG" onclick="openLightbox(this.src)" data-title="Goodness - Private Event"
+          data-location="Cedar City, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/6.3 • 1/250s • ISO 6400" />
+        <div class="overlay">Goodness - Private Event</div>
+        <div class="photo-number">13/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo14.JPG" onclick="openLightbox(this.src)" data-title="Portrait - Salt Flats"
+          data-location="Wendover, Utah" data-details="© Carson Dibb • Nikon D3100 • 82mm f/5.6 • 1/400s • ISO 800" />
+        <div class="overlay">Portrait - Salt Flats</div>
+        <div class="photo-number">14/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo15.JPG" onclick="openLightbox(this.src)" data-title="Love - Private Event"
+          data-location="Provo, Utah" data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/500s • ISO 6400" />
+        <div class="overlay">Love - Private Event</div>
+        <div class="photo-number">15/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo16.JPG" onclick="openLightbox(this.src)"
+          data-title="Comic Photoshoot - Davis High" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Nikon D3100 • 50mm f/6.3 • 1/640s • ISO 800" />
+        <div class="overlay">Comic Photoshoot - Davis High</div>
+        <div class="photo-number">16/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo17.jpg" onclick="openLightbox(this.src)"
+          data-title="Lacrosse Action - Davis High Stadium" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Nikon D700 • 190mm f/4 • 1/2500s • ISO 200" />
+        <div class="overlay">Lacrosse Action - Davis High Stadium</div>
+        <div class="photo-number">17/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo18.jpg" onclick="openLightbox(this.src)"
+          data-title="Lacrosse Portrait - Davis High Stadium" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Nikon D700 • 135mm f/4 • 1/2500s • ISO 280" />
+        <div class="overlay">Lacrosse Portrait - Davis High Stadium</div>
+        <div class="photo-number">18/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo19.JPG" onclick="openLightbox(this.src)"
+          data-title="Sparkler Signature - Salt Flats" data-location="Wendover, Utah"
+          data-details="© Carson Dibb • Nikon D3100 • 50mm f/4 • 6s • ISO 280" />
+        <div class="overlay">Sparkler Signature - Salt Flats</div>
+        <div class="photo-number">19/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo20.jpg" onclick="openLightbox(this.src)"
+          data-title="Portrait - Farmington Preserve" data-location="Farmington, Utah"
+          data-details="© Carson Dibb • Canon • 50mm f/1.8 • 1/800s • ISO 100" />
+        <div class="overlay">Portrait - Farmington Preserve</div>
+        <div class="photo-number">20/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo21.jpg" onclick="openLightbox(this.src)" data-title="Garage - Bountiful"
+          data-location="Bountiful, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/2.5 • 1/1250s • ISO 4000" />
+        <div class="overlay">Garage - Bountiful</div>
+        <div class="photo-number">21/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo22.jpg" onclick="openLightbox(this.src)" data-title="Graduates - Davis High D"
+          data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/2500s • ISO 1600" />
+        <div class="overlay">Graduates - Davis High D</div>
+        <div class="photo-number">22/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo23.jpg" onclick="openLightbox(this.src)" data-title="Swing - Bear Lake"
+          data-location="Garden City, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/8000s • ISO 400" />
+        <div class="overlay">Swing - Bear Lake</div>
+        <div class="photo-number">23/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo24.JPG" onclick="openLightbox(this.src)" data-title="Basketball - Davis High"
+          data-location="Kaysville, Utah" data-details="© Carson Dibb • Nikon D3100 • 61mm f/4.2 • 1/250s • ISO 3200" />
+        <div class="overlay">Basketball - Davis High</div>
+        <div class="photo-number">24/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo25.JPG" onclick="openLightbox(this.src)" data-title="Santa - Event Photoshoot"
+          data-location="Kaysville, Utah" data-details="© Carson Dibb • Nikon D3100 • 28mm f/5 • 1/200s • ISO 100" />
+        <div class="overlay">Santa - Event Photoshoot</div>
+        <div class="photo-number">25/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo26.JPG" onclick="openLightbox(this.src)" data-title="Portrait - Capitol"
+          data-location="Salt Lake City, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/1.8 • 1/400s • ISO 25600" />
+        <div class="overlay">Portrait - Capitol</div>
+        <div class="photo-number">26/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo27.jpg" onclick="openLightbox(this.src)"
+          data-title="Throw - Mountain Ridge Stadium" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 50mm f/5.6 • 1/640s • ISO 5000" />
+        <div class="overlay">Throw - Mountain Ridge Stadium</div>
+        <div class="photo-number">27/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo28.JPG" onclick="openLightbox(this.src)"
+          data-title="Skate - University of Utah Huntsman Center" data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 300mm f/1.8 • 1/1250s • ISO 9800" />
+        <div class="overlay">Skate - University of Utah Huntsman Center</div>
+        <div class="photo-number">28/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo29.jpg" onclick="openLightbox(this.src)" data-title="Glide - Davis High Stadium"
+          data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 190mm f/5.6 • 1/400s • ISO 320" />
+        <div class="overlay">Glide - Davis High Stadium</div>
+        <div class="photo-number">29/30</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="Images/gallery/photo30.jpg" onclick="openLightbox(this.src)" data-title="Catch - Fremont Stadium"
+          data-location="Kaysville, Utah"
+          data-details="© Carson Dibb • Canon EOS R8 • 300mm f/5.6 • 1/640s • ISO 5000" />
+        <div class="overlay">Catch - Fremont Stadium</div>
+        <div class="photo-number">30/30</div>
       </div>
     </div>
 
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <section class="contact-cta">
+      <h2>CONTACT</h2>
+      <p>Contact me for a photoshoot or project collaboration.</p>
 
-    <script>
-      // ========================================
-      // GALLERY IMAGE REVEAL
-      // ========================================
+      <a href="contact.html" class="contact-button"> Get in Touch </a>
+    </section>
+  </main>
 
-      window.addEventListener("load", () => {
-        const galleryItems = document.querySelectorAll(".gallery-item");
+  <footer>
+    © 2026 Carson Dibb. Website designed and developed by
+    <a href="about.html" style="color: white; text-decoration: underline;">
+      Carson Dibb
+    </a>.
+  </footer>
 
-        galleryItems.forEach((item, index) => {
-          setTimeout(
-            () => {
-              item.classList.add("revealed");
-            },
-            100 + Math.min(index, 7) * 80,
-          );
-        });
+  <div id="lightbox">
+    <div class="lightbox-content">
+      <img id="lightbox-img" />
+
+      <div id="photo-info">
+        <div id="photo-title"></div>
+        <div id="photo-location"></div>
+        <div id="photo-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <script>
+    // ========================================
+    // GALLERY IMAGE REVEAL
+    // ========================================
+
+    window.addEventListener("load", () => {
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach((item, index) => {
+        setTimeout(
+          () => {
+            item.classList.add("revealed");
+          },
+          100 + Math.min(index, 7) * 80,
+        );
       });
+    });
 
-      // ========================================
-      // LIGHTBOX
-      // ========================================
+    // ========================================
+    // LIGHTBOX
+    // ========================================
 
-      const images = document.querySelectorAll(".gallery-item img");
+    const images = document.querySelectorAll(".gallery-item img");
 
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
 
-      images.forEach((img) => {
-        img.addEventListener("click", function () {
-          lightboxImg.style.opacity = "0";
+    images.forEach((img) => {
+      img.addEventListener("click", function () {
+        lightboxImg.style.opacity = "0";
 
-          const newImage = new Image();
+        const newImage = new Image();
 
-          newImage.onload = function () {
-            lightboxImg.src = this.src;
-            lightboxImg.style.opacity = "1";
+        newImage.onload = function () {
+          lightboxImg.src = this.src;
+          lightboxImg.style.opacity = "1";
 
-            document.getElementById("photo-title").textContent =
-              img.dataset.title;
+          document.getElementById("photo-title").textContent =
+            img.dataset.title;
 
-            document.getElementById("photo-location").textContent =
-              img.dataset.location;
+          document.getElementById("photo-location").textContent =
+            img.dataset.location;
 
-            document.getElementById("photo-details").textContent =
-              img.dataset.details;
-          };
+          document.getElementById("photo-details").textContent =
+            img.dataset.details;
+        };
 
-          newImage.src = this.src;
+        newImage.src = this.src;
 
-          lightbox.style.display = "flex";
-        });
+        lightbox.style.display = "flex";
       });
+    });
 
-      lightbox.addEventListener("click", function () {
-        lightbox.style.display = "none";
+    lightbox.addEventListener("click", function () {
+      lightbox.style.display = "none";
+    });
+
+    // ========================================
+    // MASONRY
+    // ========================================
+
+    const gallery = document.querySelector(".gallery");
+
+    imagesLoaded(gallery, function () {
+      new Masonry(gallery, {
+        itemSelector: ".gallery-item",
+        percentPosition: true,
+        gutter: 25,
       });
+    });
+  </script>
+</body>
 
-      // ========================================
-      // MASONRY
-      // ========================================
-
-      const gallery = document.querySelector(".gallery");
-
-      imagesLoaded(gallery, function () {
-        new Masonry(gallery, {
-          itemSelector: ".gallery-item",
-          percentPosition: true,
-          gutter: 25,
-        });
-      });
-    </script>
-  </body>
 </html>
