@@ -1,393 +1,402 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Carson Dibb</title>
 
-  <title>Thank You | Carson Dibb</title>
-
-  <style>
-    /* ========================================
+    <style>
+      /* ========================================
          RESET
       ======================================== */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: white;
-    }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #111;
+        color: white;
+      }
 
-    /* ========================================
+      /* ========================================
          SIDEBAR
       ======================================== */
 
-    #sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 280px;
-      height: 100vh;
-      background: #0d0d0d;
+      #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: #0d0d0d;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-      padding: 55px 35px 35px;
+        padding: 55px 35px 35px;
 
-      border-right: 1px solid #2a2a2a;
-      z-index: 1000;
-    }
+        border-right: 1px solid #2a2a2a;
+        z-index: 1000;
+      }
 
-    /* ========================================
+      /* ========================================
          SIGNATURE
       ======================================== */
 
-    .signature-link {
-      display: block;
-      width: 195px;
-      height: 100%;
-      text-decoration: none;
-    }
+      .signature-link {
+        display: block;
+        width: 195px;
+        height: 100%;
+        text-decoration: none;
+      }
 
-    .signature-container {
-      position: relative;
-      width: 195px;
-      height: 100%;
+      .signature-container {
+        position: relative;
+        width: 195px;
+        height: 100%;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .sidebar-signature {
-      position: absolute;
-      width: 195px;
-      height: auto;
-      display: block;
+      .sidebar-signature {
+        position: absolute;
+        width: 195px;
+        height: auto;
+        display: block;
 
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
 
-    .signature-name {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      .signature-name {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
-      width: max-content;
+        width: max-content;
 
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 80px;
-      font-weight: 1800;
-      letter-spacing: 2px;
-      text-align: center;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 80px;
+        font-weight: 1800;
+        letter-spacing: 2px;
+        text-align: center;
 
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
 
-    .signature-link:hover .sidebar-signature {
-      opacity: 0;
-    }
+      .signature-link:hover .sidebar-signature {
+        opacity: 0;
+      }
 
-    .signature-link:hover .signature-name {
-      opacity: 1;
-    }
+      .signature-link:hover .signature-name {
+        opacity: 1;
+      }
 
-    /* ========================================
+      /* ========================================
          NAVIGATION
       ======================================== */
 
-    #sidebar nav {
-      width: 100%;
-    }
+      #sidebar nav {
+        width: 100%;
+      }
 
-    #sidebar nav ul {
-      list-style: none;
+      #sidebar nav ul {
+        list-style: none;
 
-      display: flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
 
-      gap: 18px;
-    }
+        gap: 18px;
+      }
 
-    #sidebar nav a {
-      color: #fff;
+      #sidebar nav a {
+        color: #fff;
 
-      text-decoration: none;
+        text-decoration: none;
 
-      font-size: 15px;
-      font-weight: 500;
+        font-size: 15px;
+        font-weight: 500;
 
-      transition: opacity 0.2s ease;
-    }
+        transition: opacity 0.2s ease;
+      }
 
-    #sidebar nav a:hover {
-      opacity: 0.55;
-    }
+      #sidebar nav a:hover {
+        opacity: 0.55;
+      }
 
-    /* ========================================
+      /* ========================================
          MAIN
       ======================================== */
 
-    main {
-      position: relative;
+      main {
+        position: relative;
 
-      margin-left: 280px;
+        margin-left: 280px;
 
-      min-height: 100vh;
+        min-height: 100vh;
 
-      overflow: hidden;
-    }
+        overflow: hidden;
+      }
 
-    /* ========================================
+      /* ========================================
          BACKGROUND VIDEO
       ======================================== */
 
-    .background-video {
-      position: absolute;
+      .background-video {
+        position: absolute;
 
-      top: 0;
-      left: 0;
+        top: 0;
+        left: 0;
 
-      width: 100%;
-      height: 100%;
+        width: 100%;
+        height: 100%;
 
-      object-fit: cover;
+        object-fit: cover;
 
-      z-index: 0;
-    }
+        z-index: 0;
+      }
 
-    /* ========================================
+      /* ========================================
          VIDEO OVERLAY
       ======================================== */
 
-    .video-overlay {
-      position: absolute;
+      .video-overlay {
+        position: absolute;
 
-      inset: 0;
+        inset: 0;
 
-      background: rgba(17, 17, 17, 0.55);
+        background: rgba(17, 17, 17, 0.55);
 
-      z-index: 1;
-    }
+        z-index: 1;
+      }
 
-    /* ========================================
+      /* ========================================
          THANK YOU
       ======================================== */
 
-    .thank-you {
-      position: relative;
-
-      min-height: 100vh;
-
-      padding: 0 70px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-
-      z-index: 2;
-    }
-
-    .section-label {
-      font-size: 13px;
-
-      letter-spacing: 0.18em;
-
-      color: #aaa;
-
-      text-transform: uppercase;
-
-      margin-bottom: 35px;
-    }
-
-    .thank-you h1 {
-      font-size: clamp(80px, 14vw, 220px);
-
-      line-height: 0.82;
-
-      letter-spacing: -0.07em;
-
-      font-weight: 700;
-
-      margin-left: -8px;
-
-      max-width: 1100px;
-    }
-
-    .thank-you p {
-      margin-top: 40px;
-
-      max-width: 550px;
-
-      font-size: 16px;
-
-      line-height: 1.7;
-
-      color: #ccc;
-    }
-
-    /* ========================================
-         BACK HOME
-      ======================================== */
-
-    .back-home {
-      display: inline-block;
-
-      margin-top: 40px;
-
-      color: white;
-
-      text-decoration: none;
-
-      font-size: 13px;
-
-      letter-spacing: 0.12em;
-
-      text-transform: uppercase;
-
-      border-bottom: 1px solid #777;
-
-      padding-bottom: 8px;
-
-      transition: opacity 0.2s ease;
-    }
-
-    .back-home:hover {
-      opacity: 0.5;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: white;
-    }
-
-    .signature-name {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      width: max-content;
-
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 40px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    main {
-      position: relative;
-      margin-left: 280px;
-      height: 100vh;
-      padding: 0 70px;
-      overflow: hidden;
-    }
-
-    .thank-you {
-      position: relative;
-      z-index: 2;
-
-      width: 100%;
-      height: 100vh;
-      min-height: 0;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    /* ========================================
-         RESPONSIVE
-      ======================================== */
-
-    @media (max-width: 1100px) {
       .thank-you {
-        padding: 0 45px;
-      }
-    }
+        position: relative;
 
-    @media (max-width: 900px) {
-      #sidebar {
-        display: none;
+        min-height: 100vh;
+
+        padding: 0 70px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        z-index: 2;
       }
 
-      main {
-        margin-left: 0;
-      }
+      .section-label {
+        font-size: 13px;
 
-      .thank-you {
-        padding: 0 30px;
+        letter-spacing: 0.18em;
+
+        color: #aaa;
+
+        text-transform: uppercase;
+
+        margin-bottom: 35px;
       }
 
       .thank-you h1 {
-        font-size: clamp(65px, 18vw, 140px);
-      }
-    }
+        font-size: clamp(80px, 14vw, 220px);
 
-    @media (max-width: 600px) {
-      .thank-you {
-        padding: 0 20px;
-      }
+        line-height: 0.82;
 
-      .thank-you h1 {
-        font-size: clamp(60px, 19vw, 110px);
+        letter-spacing: -0.07em;
+
+        font-weight: 700;
+
+        margin-left: -8px;
+
+        max-width: 1100px;
       }
 
       .thank-you p {
-        font-size: 14px;
+        margin-top: 40px;
 
-        margin-top: 30px;
+        max-width: 550px;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        color: #ccc;
       }
+
+      /* ========================================
+         BACK HOME
+      ======================================== */
 
       .back-home {
-        margin-top: 30px;
-      }
-    }
-  </style>
-</head>
+        display: inline-block;
 
-<body>
-  <!-- ========================================
+        margin-top: 40px;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        letter-spacing: 0.12em;
+
+        text-transform: uppercase;
+
+        border-bottom: 1px solid #777;
+
+        padding-bottom: 8px;
+
+        transition: opacity 0.2s ease;
+      }
+
+      .back-home:hover {
+        opacity: 0.5;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #111;
+        color: white;
+      }
+
+      .signature-name {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        width: max-content;
+
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      main {
+        position: relative;
+        margin-left: 280px;
+        height: 100vh;
+        padding: 0 70px;
+        overflow: hidden;
+      }
+
+      .thank-you {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        height: 100vh;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      /* ========================================
+         RESPONSIVE
+      ======================================== */
+
+      @media (max-width: 1100px) {
+        .thank-you {
+          padding: 0 45px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        #sidebar {
+          display: none;
+        }
+
+        main {
+          margin-left: 0;
+        }
+
+        .thank-you {
+          padding: 0 30px;
+        }
+
+        .thank-you h1 {
+          font-size: clamp(65px, 18vw, 140px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .thank-you {
+          padding: 0 20px;
+        }
+
+        .thank-you h1 {
+          font-size: clamp(60px, 19vw, 110px);
+        }
+
+        .thank-you p {
+          font-size: 14px;
+
+          margin-top: 30px;
+        }
+
+        .back-home {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ========================================
          SIDEBAR
     ======================================== -->
 
-  <aside id="sidebar">
-    <!-- SIGNATURE -->
-    <a href="index.html" class="signature-link">
-      <div class="signature-container">
-        <svg class="sidebar-signature" xmlns="http://www.w3.org/2000/svg" viewBox="30 300 740 450">
-          <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
+    <aside id="sidebar">
+      <!-- SIGNATURE -->
+      <a href="index.html" class="signature-link">
+        <div class="signature-container">
+          <svg
+            class="sidebar-signature"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="30 300 740 450"
+          >
+            <path
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="
 M171.707550,499.393555 
 C152.434036,489.920746 140.949142,474.638763 138.377808,453.950806 
 C136.029053,435.053833 140.001007,416.800476 150.112656,400.358856 
@@ -489,9 +498,16 @@ M584.417847,452.917297
 C582.997375,453.567627 581.199951,453.502441 580.199402,455.056274 
 C588.476440,459.510010 592.033630,458.132233 594.496948,449.246765 
 C591.226135,450.430573 588.169006,451.537048 584.417847,452.917297 
-z" />
+z"
+            />
 
-          <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="
+            <path
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="
 M253.434601,715.462219 
 C244.257065,722.138794 235.398911,728.651428 226.425323,735.000977 
 C223.264969,737.237122 219.817642,738.888062 215.673813,737.591064 
@@ -573,35 +589,44 @@ C364.832855,568.741943 364.832855,561.533691 359.286774,556.761353
 C355.628418,553.613403 351.778290,550.199585 347.713440,547.819214 
 C340.192902,543.415161 331.494995,541.475342 322.145294,539.798279 
 C320.441895,564.307678 318.774109,588.305115 317.022888,613.231079 
-z" />
-        </svg>
+z"
+            />
+          </svg>
 
-        <span class="signature-name">CARSON <br />DIBB</span>
-      </div>
-    </a>
-  </aside>
+          <span class="signature-name">CARSON <br />DIBB</span>
+        </div>
+      </a>
+    </aside>
 
-  <!-- ========================================
+    <!-- ========================================
          MAIN CONTENT
     ======================================== -->
 
-    <!-- THANK YOU CONTENT -->
-    <section class="thank-you">
-      <div class="section-label">CONTACT</div>
+    <main>
+      <!-- BACKGROUND VIDEO -->
+      <video class="background-video" autoplay muted loop playsinline>
+        <source src="thank-you-video.mp4" type="video/mp4" />
+      </video>
 
-      <h1>
-        THANK<br />
-        YOU.
-      </h1>
+      <!-- DARK OVERLAY -->
+      <div class="video-overlay"></div>
 
-      <p>
-        Your message has been successfully submitted. I’ll get back to you as
-        soon as possible.
-      </p>
+      <!-- THANK YOU CONTENT -->
+      <section class="thank-you">
+        <div class="section-label">CONTACT</div>
 
-      <a href="index.html" class="back-home"> ← BACK HOME </a>
-    </section>
-  </main>
-</body>
+        <h1>
+          THANK<br />
+          YOU.
+        </h1>
 
+        <p>
+          Your message has been successfully submitted. I’ll get back to you as
+          soon as possible.
+        </p>
+
+        <a href="index.html" class="back-home"> ← BACK HOME </a>
+      </section>
+    </main>
+  </body>
 </html>
