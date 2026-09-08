@@ -161,13 +161,15 @@
     .background-video {
       position: absolute;
 
-      top: 50%;
-      left: 0;
+      top: 0;
+      right: 0;
+      left: auto;
 
       width: 100%;
-      height: auto;
+      height: 100%;
 
-      transform: translateY(-50%);
+      object-fit: cover;
+      object-position: right center;
 
       z-index: 0;
     }
