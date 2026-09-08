@@ -213,16 +213,6 @@ z" />
 		</a>
 	</nav>
 
-	<!-- Background Video -->
-
-	<div class="video-container">
-		<video autoplay muted loop playsinline>
-			<source src="../videos/contact-background.mp4" type="video/mp4" />
-		</video>
-
-		<div class="video-overlay"></div>
-	</div>
-
 	<!-- Background Photo Slideshow -->
 
 	<div class="hero-slideshow"
@@ -303,33 +293,19 @@ z" />
 			textarea.style.height = textarea.scrollHeight + "px";
 		});
 
-		const photos = [
-			"../images/contact1.jpg",
-			"../images/contact2.jpg",
-			"../images/contact3.jpg",
-			"../images/contact4.jpg",
-			"../images/contact5.jpg",
-		];
-
-		const slide = document.querySelector(".photo-slide");
+		const slides = document.querySelectorAll(".hero-slideshow .slide");
 
 		let index = 0;
 
-		function changePhoto() {
-			slide.style.backgroundImage = `url(${photos[index]})`;
+		function changeSlide() {
+			slides[index].style.opacity = "0";
 
-			slide.classList.add("active");
+			index = (index + 1) % slides.length;
 
-			setTimeout(() => {
-				slide.classList.remove("active");
-			}, 4000);
-
-			index = (index + 1) % photos.length;
+			slides[index].style.opacity = "1";
 		}
 
-		changePhoto();
-
-		setInterval(changePhoto, 6000);
+		setInterval(changeSlide, 6000);
 	</script>
 </body>
 
