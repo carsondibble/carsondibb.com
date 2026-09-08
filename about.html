@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html lang="en">
+
+<head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>About | Carson Dibb</title>
+
+<link rel="icon" type="image/png" href="favicon.png" />
+
+<style> /* ======================================== RESET ======================================== */ * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { background: #111; color: #fff; font-family: Arial, Helvetica, sans-serif; overflow-x: hidden; } /* ======================================== SIDEBAR ======================================== */ .sidebar { position: fixed; left: 0; top: 0; width: 280px; height: 100vh; padding: 35px 30px; display: flex; flex-direction: column; background: #111; z-index: 1000; } .sidebar-logo { display: block; width: 100%; max-width: 190px; margin-bottom: 50px; } .sidebar-logo img { display: block; width: 100%; height: auto; } .sidebar-nav { display: flex; flex-direction: column; gap: 14px; } .sidebar-nav a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; transition: opacity 0.2s ease; } .sidebar-nav a:hover { opacity: 0.55; } .sidebar-bottom { margin-top: auto; } .sidebar-bottom a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; transition: opacity 0.2s ease; } .sidebar-bottom a:hover { opacity: 0.55; } /* ======================================== MAIN ======================================== */ main { margin-left: 280px; min-height: 100vh; } /* ======================================== ABOUT ======================================== */ .about { min-height: 100vh; padding: 70px 8vw; display: flex; flex-direction: column; } .page-title { font-size: clamp(50px, 8vw, 120px); line-height: 0.9; font-weight: 700; letter-spacing: -5px; margin-bottom: 70px; } .about-content { display: grid; grid-template-columns: minmax(280px, 420px) minmax(300px, 650px); gap: clamp(50px, 8vw, 120px); align-items: center; margin: auto 0; } /* ======================================== PORTRAIT ======================================== */ .portrait { width: 100%; aspect-ratio: 3 / 4; overflow: hidden; background: #1a1a1a; } .portrait img { width: 100%; height: 100%; display: block; object-fit: cover; } /* ======================================== DESCRIPTION ======================================== */ .about-text { max-width: 620px; } .about-text h2 { font-size: 15px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; } .about-text p { font-size: clamp(18px, 2vw, 25px); line-height: 1.55; font-weight: 400; color: #e5e5e5; margin-bottom: 24px; } .about-text p:last-child { margin-bottom: 0; } /* ======================================== CONTACT CTA ======================================== */ .contact-section { min-height: 360px; padding: 80px 8vw; display: flex; flex-direction: column; justify-content: center; background: #181818; } .contact-section h2 { font-size: clamp(45px, 7vw, 100px); line-height: 0.9; letter-spacing: -4px; margin-bottom: 25px; } .contact-section p { color: #bbb; font-size: 17px; line-height: 1.5; margin-bottom: 30px; } .contact-button { display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 14px 24px; border: 1px solid #fff; color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: background 0.2s ease, color 0.2s ease; } .contact-button:hover { background: #fff; color: #111; } /* ======================================== FOOTER ======================================== */ footer { padding: 25px 8vw; background: #111; color: #666; font-size: 11px; letter-spacing: 0.5px; } /* ======================================== MOBILE ======================================== */ @media (max-width: 800px) { .sidebar { position: relative; width: 100%; height: auto; padding: 25px; flex-direction: row; align-items: center; justify-content: space-between; } .sidebar-logo { width: 150px; margin: 0; } .sidebar-nav { display: none; } .sidebar-bottom { margin: 0; } main { margin-left: 0; } .about { padding: 50px 25px; } .page-title { margin-bottom: 50px; letter-spacing: -3px; } .about-content { grid-template-columns: 1fr; gap: 45px; margin: 0; } .portrait { max-width: 450px; } .about-text p { font-size: 19px; } .contact-section { padding: 65px 25px; } footer { padding: 25px; } } </style>
+
+</head>
+
+<body>
+
+<!-- ======================================== SIDEBAR ======================================== -->
+
+<aside class="sidebar">
+
+<a href="index.html" class="sidebar-logo">
+  <img src="signature.png" alt="Carson Dibb" />
+</a>
+
+<nav class="sidebar-nav">
+  <a href="index.html">HOME</a>
+  <a href="projects.html">PROJECTS</a>
+  <a href="about.html">ABOUT</a>
+  <a href="gallery.html">GALLERY</a>
+  <a href="contact.html">CONTACT</a>
+</nav>
+
+<div class="sidebar-bottom">
+  <a href="contact.html">CONTACT</a>
+</div>
+
+</aside>
+
+<!-- ======================================== MAIN CONTENT ======================================== -->
+
+<main>
+
+<section class="about">
+
+  <h1 class="page-title">ABOUT</h1>
+
+  <div class="about-content">
+
+    <div class="portrait">
+      <img
+        src="about-photo.jpg"
+        alt="Portrait of Carson Dibb"
+      />
+    </div>
+
+
+    <div class="about-text">
+
+      <h2>Carson Dibb — Photographer</h2>
+
+      <p>
+        I’m Carson Dibb, a photographer based in Utah with a focus on
+        capturing people, events, and the moments that make them memorable.
+      </p>
+
+      <p>
+        My work ranges from portraits and creative photoshoots to concerts,
+        sporting events, and live experiences. I enjoy working in
+        fast-moving environments where timing, composition, and the ability
+        to adapt all matter.
+      </p>
+
+      <p>
+        Photography is both a creative outlet and a way for me to document
+        the world around me. Whether I’m photographing an athlete in
+        motion, a performer under stage lights, or a portrait in a quiet
+        setting, my goal is to create images that feel authentic to the
+        moment.
+      </p>
+
+      <p>
+        I’m always looking for new people, places, and projects to
+        photograph.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================
+     CONTACT
+======================================== -->
+
+<section class="contact-section">
+
+  <h2>CONTACT</h2>
+
+  <p>
+    Contact me for a photoshoot or project collaboration.
+  </p>
+
+  <a href="contact.html" class="contact-button">
+    Get in touch
+  </a>
+
+</section>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+  © 2026 Carson Dibb. Website designed and developed by Carson Dibb.
+</footer>
+
+</main>
+
+</body>
+
+</html>
