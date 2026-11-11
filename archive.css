@@ -62,7 +62,7 @@ body {
 
 .archive-heading h1 {
   margin: 0;
-  font-size: clamp(32px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 500;
   letter-spacing: 0.08em;
 }
@@ -134,7 +134,7 @@ body {
 
 .project-card h2 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
