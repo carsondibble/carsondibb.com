@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Private Projects | Carson Dibb</title>
+    <meta name="description" content="Enter your access code to open a private project." />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="archive.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" href="private-project.css" />
+    <script src="private-projects.js" defer></script>
+    <script src="private-project.js" defer></script>
+  </head>
+  <body>
+    <nav id="sidebar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img class="sidebar-signature" src="Images/signature.svg" alt="" aria-hidden="true" />
+      </a>
+      <nav class="sidebar-links" aria-label="Main pages">
+        <a href="gallery.html">Gallery</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <details class="mobile-navigation">
+        <summary aria-label="Toggle site navigation">Menu</summary>
+        <nav class="mobile-navigation-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="archive.html">Archive</a>
+          <a href="about.html">About Me</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </details>
+    </nav>
+
+    <main class="archive-main private-project-main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="archive.html">Archive</a></li>
+          <li aria-current="page">Private Projects</li>
+        </ol>
+      </nav>
+      <section class="private-project-card" aria-labelledby="private-project-title">
+        <p class="archive-eyebrow">PRIVATE PROJECTS</p>
+        <h1 id="private-project-title">ENTER YOUR ACCESS CODE</h1>
+        <p class="private-project-intro">Enter the password you received to open your project.</p>
+        <form data-private-project-form>
+          <label for="private-project-password">Password</label>
+          <input
+            id="private-project-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            autocapitalize="none"
+            spellcheck="false"
+            required
+          />
+          <button type="submit">OPEN PROJECT</button>
+        </form>
+        <p class="private-project-status" data-private-project-status role="status" aria-live="polite"></p>
+        <a class="private-project-back-link" href="archive.html">Back to the archive</a>
+      </section>
+    </main>
+  </body>
+</html>

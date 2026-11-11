@@ -67,10 +67,24 @@ body {
   letter-spacing: 0.08em;
 }
 
-.archive-heading > p:last-child {
+.archive-heading h1 + p {
   max-width: 640px;
   color: #bbb;
   line-height: 1.7;
+}
+
+.private-project-entry {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 8px;
+  color: #ddd;
+  text-underline-offset: 4px;
+}
+
+.private-project-entry:focus-visible {
+  outline: 2px solid #c49a45;
+  outline-offset: 4px;
 }
 
 .archive-status {

@@ -5,7 +5,7 @@
   const gallery = document.querySelector("[data-drive-gallery]");
 
   if (!config || !Array.isArray(config.projects)) {
-    setStatus("Archive setup is incomplete: configure archive-projects.js.");
+    setStatus("Projects are temporarily unavailable.");
     return;
   }
 
@@ -86,8 +86,8 @@
     projectList.replaceChildren(...projects.map(makeProjectCard));
     setStatus(
       projects.length
-        ? `${projects.length} public project${projects.length === 1 ? "" : "s"}`
-        : "No public projects yet. Add one to archive-projects.js and publish the site.",
+        ? `${projects.length} project${projects.length === 1 ? "" : "s"}`
+        : "Projects are coming soon.",
     );
   }
 

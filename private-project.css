@@ -1,0 +1,104 @@
+.private-project-main {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+}
+
+.private-project-main .breadcrumbs {
+  width: 100%;
+}
+
+.private-project-card {
+  width: min(100%, 520px);
+  margin: clamp(48px, 12vh, 120px) auto 0;
+  padding: clamp(24px, 5vw, 42px);
+  background: #191919;
+  border: 1px solid #333;
+}
+
+.private-project-card h1 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.private-project-intro {
+  margin: 14px 0 28px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.private-project-card form {
+  display: grid;
+  gap: 12px;
+}
+
+.private-project-card label {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.private-project-card input {
+  min-height: 48px;
+  padding: 10px 12px;
+  background: #111;
+  border: 1px solid #555;
+  border-radius: 0;
+  color: #fff;
+  font: inherit;
+}
+
+.private-project-card input:focus-visible,
+.private-project-card button:focus-visible,
+.private-project-back-link:focus-visible {
+  outline: 2px solid #c49a45;
+  outline-offset: 3px;
+}
+
+.private-project-card button {
+  min-height: 48px;
+  margin-top: 6px;
+  padding: 10px 16px;
+  background: #c49a45;
+  border: 1px solid #c49a45;
+  color: #111;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.private-project-card button:hover {
+  background: #d3ad60;
+  border-color: #d3ad60;
+}
+
+.private-project-card button:disabled,
+.private-project-card input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.private-project-status {
+  min-height: 1.5em;
+  margin: 18px 0 0;
+  color: #e6b7b7;
+  line-height: 1.5;
+}
+
+.private-project-back-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 14px;
+  color: #ddd;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .private-project-card {
+    margin-top: clamp(32px, 8vh, 72px);
+  }
+}
