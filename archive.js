@@ -74,9 +74,12 @@
     copy.className = "project-card-copy";
     const title = document.createElement("h2");
     title.textContent = project.title;
-    const description = document.createElement("p");
-    description.textContent = project.description || "Open this project to browse its photos.";
-    copy.append(title, description);
+    copy.append(title);
+    if (project.description) {
+      const description = document.createElement("p");
+      description.textContent = project.description;
+      copy.append(description);
+    }
     link.append(copy);
     return link;
   }
@@ -87,7 +90,7 @@
     setStatus(
       projects.length
         ? `${projects.length} project${projects.length === 1 ? "" : "s"}`
-        : "Projects are coming soon.",
+        : "",
     );
   }
 

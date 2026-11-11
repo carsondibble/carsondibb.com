@@ -32,7 +32,6 @@
     : [];
 
   if (!configuredProjects.length) {
-    status.textContent = "Private projects are not configured yet.";
     passwordInput.disabled = true;
     submitButton.disabled = true;
     return;
