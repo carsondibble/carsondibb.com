@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>Project Gallery | Carson Dibb</title>
+    <meta name="description" content="Browse a photography project gallery by Utah photographer Carson Dibb." />
+    <link rel="canonical" href="https://www.carsondibb.com/archive-project.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Carson Dibb Photography" />
+    <meta property="og:title" content="Project Gallery | Carson Dibb" />
+    <meta property="og:description" content="Browse a photography project gallery by Utah photographer Carson Dibb." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Project Gallery | Carson Dibb" />
+    <meta name="twitter:description" content="Browse a photography project gallery by Utah photographer Carson Dibb." />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="archive.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <script src="archive-projects.js" defer></script>
+    <script src="archive-api-key.js" defer></script>
+    <script src="archive.js" defer></script>
+  </head>
+  <body>
+    <nav id="sidebar" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img class="sidebar-signature" src="Images/signature.svg" alt="" aria-hidden="true" />
+      </a>
+      <nav class="sidebar-links" aria-label="Main pages">
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Me</a>
+        <a href="archive.html" aria-current="page">Archive</a>
+      </nav>
+      <details class="mobile-navigation">
+        <summary aria-label="Toggle site navigation">Menu</summary>
+        <nav class="mobile-navigation-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="archive.html" aria-current="page">Archive</a>
+        </nav>
+      </details>
+    </nav>
+
+    <main class="archive-main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="archive.html">Archive</a></li>
+          <li data-project-breadcrumb aria-current="page">Project</li>
+        </ol>
+      </nav>
+      <header class="archive-heading">
+        <p class="archive-eyebrow">PROJECT GALLERY</p>
+        <h1 data-project-title>Loading project…</h1>
+        <p data-project-description></p>
+      </header>
+      <p class="archive-status" data-archive-status role="status" aria-live="polite">Connecting to Google Drive…</p>
+      <section class="drive-gallery" data-drive-gallery aria-label="Project photos"></section>
+      <a class="archive-back-link" href="archive.html">← All projects</a>
+    </main>
+
+    <dialog class="archive-lightbox" data-lightbox aria-label="Photo viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close photo">×</button>
+      <img data-lightbox-image alt="" />
+      <p data-lightbox-caption></p>
+      <a data-lightbox-drive target="_blank" rel="noopener noreferrer">Open in Google Drive</a>
+    </dialog>
+  </body>
+</html>
