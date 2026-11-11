@@ -76,12 +76,14 @@ body {
 .private-project-link {
   display: inline-block;
   margin-top: 12px;
-  color: #f0d8a7;
+  color: #fff;
+  font-style: italic;
+  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 .private-project-link:hover {
-  color: #c49a45;
+  color: #fff;
 }
 
 .private-project-link:focus-visible {
