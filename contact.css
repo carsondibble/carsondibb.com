@@ -110,24 +110,6 @@ body {
   opacity: 1;
 }
 
-.sidebar-signature path {
-  fill: none;
-  stroke: #fff;
-
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  stroke-dasharray: 20000;
-  stroke-dashoffset: 20000;
-
-  animation: drawSignature 9s ease forwards;
-}
-
-.sidebar-signature path:nth-child(2) {
-  animation-delay: 0.8s;
-}
-
 .nav-links a {
   display: block;
 
@@ -382,12 +364,6 @@ body {
   }
 }
 
-@keyframes drawSignature {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 /* ========================================
    FOOTER
 ======================================== */
@@ -415,8 +391,9 @@ footer {
 ======================================== */
 
 @media (max-width: 900px) {
-  #sidebar {
-    display: none;
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .video-container,
@@ -428,19 +405,20 @@ footer {
 
   .contact-content {
     margin-left: 0;
-
-    padding: 30px;
+    height: auto;
+    min-height: calc(100vh - 68px);
+    min-height: calc(100svh - 68px);
+    padding: 24px 20px;
   }
 
   .contact-box {
-    width: 100%;
-
-    padding: 40px 25px;
+    width: min(100%, 600px);
+    padding: 36px 25px;
   }
 
   footer {
+    position: relative;
     width: 100%;
-
     margin-left: 0;
   }
 }
@@ -448,9 +426,36 @@ footer {
 @media (max-width: 700px) {
   .contact-box .form-row {
     flex-direction: column;
+    gap: 14px;
   }
 
   .contact-box h1 {
-    font-size: 45px;
+    margin-bottom: 20px;
+    font-size: clamp(38px, 12vw, 52px);
+    letter-spacing: 6px;
+  }
+
+  .contact-box p {
+    margin-bottom: 24px;
+    font-size: 17px;
+  }
+
+  .contact-box input,
+  .contact-box textarea {
+    font-size: 16px;
+  }
+
+  .contact-box textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .contact-box button {
+    min-height: 48px;
+    width: 100%;
+  }
+
+  footer {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   }
 }
