@@ -73,32 +73,18 @@ body {
   line-height: 1.7;
 }
 
-.private-project-entry {
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
+.private-project-link {
+  display: inline-block;
   margin-top: 12px;
-  padding: 0 18px;
-  border: 1px solid #c49a45;
   color: #f0d8a7;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.private-project-entry:hover {
-  background: #c49a45;
-  border-color: #c49a45;
-  color: #111;
+.private-project-link:hover {
+  color: #c49a45;
 }
 
-.private-project-entry:focus-visible {
+.private-project-link:focus-visible {
   outline: 2px solid #c49a45;
   outline-offset: 4px;
 }
@@ -335,7 +321,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .private-project-entry,
   .project-card,
   .drive-photo img {
     transition: none;
