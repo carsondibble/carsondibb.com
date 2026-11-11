@@ -2,13 +2,12 @@ window.ARCHIVE_CONFIG = {
   projects: [
     // Add public projects here. Drive folders and all contained images must be
     // shared as "Anyone with the link" (Viewer).
-    // {
-    //   slug: "example-project",
-    //   title: "Example Project",
-    //   description: "A short project description.",
-    //   folderUrl: "https://drive.google.com/drive/folders/YOUR_FOLDER_ID",
-    //   coverFileId: "OPTIONAL_PUBLIC_IMAGE_FILE_ID",
-    //   access: "public"
-    // }
+    {
+      slug: "usa-out",
+      title: "USA Out",
+      description: "Photos from the USA Out project.",
+      folderUrl: "https://drive.google.com/drive/folders/1XRrVJHMgJqXqGKE_w4xbjJuEMq33Lziy?usp=sharing",
+      access: "public",
+    },
   ],
 };

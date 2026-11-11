@@ -177,7 +177,9 @@
       project.description || `Browse photos from ${project.title} by Carson Dibb.`;
 
     if (!config.apiKey || config.apiKey === "YOUR_RESTRICTED_GOOGLE_DRIVE_API_KEY") {
-      setStatus("Add a restricted Google Drive API key to archive-projects.js to load this public folder.");
+      setStatus(
+        "Google Drive API key unavailable. Set the GOOGLE_DRIVE_API_KEY GitHub Actions secret and redeploy the site.",
+      );
       return;
     }
 
