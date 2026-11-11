@@ -6,12 +6,22 @@
   flex-direction: column;
 }
 
+#sidebar .logo {
+  justify-content: center;
+}
+
+#sidebar .logo .sidebar-signature {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .sidebar-links {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .logo {
@@ -25,6 +35,13 @@
 }
 
 .sidebar-links a {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border: 1px solid transparent;
   color: #ddd;
   font-size: 18px;
   letter-spacing: 0.12em;
@@ -32,13 +49,31 @@
   text-transform: uppercase;
   transition:
     color 0.25s ease,
-    transform 0.25s ease;
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .sidebar-links a:hover,
+.sidebar-links a:focus-visible,
 .sidebar-links a[aria-current="page"] {
   color: #fff;
-  transform: translateX(6px);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: #555;
+}
+
+.sidebar-links a:focus-visible {
+  outline: 2px solid #c49a45;
+  outline-offset: 3px;
+}
+
+.sidebar-links a:active {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-links a {
+    transition: none;
+  }
 }
 
 .breadcrumbs {
@@ -139,7 +174,9 @@ summary:focus-visible,
 
   #sidebar .sidebar-signature {
     left: 0;
+    top: 50%;
     width: min(145px, 100%);
+    transform: translateY(-50%);
   }
 
   #sidebar .logo span {
