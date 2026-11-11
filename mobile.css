@@ -2,6 +2,45 @@
   display: none;
 }
 
+#sidebar {
+  flex-direction: column;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.logo {
+  margin-bottom: 0;
+}
+
+.signature-link {
+  height: 80px;
+  flex: 0 0 80px;
+  margin-bottom: 8px;
+}
+
+.sidebar-links a {
+  color: #ddd;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a[aria-current="page"] {
+  color: #fff;
+  transform: translateX(6px);
+}
+
 .breadcrumbs {
   margin-bottom: 24px;
   color: #999;
@@ -84,6 +123,10 @@ summary:focus-visible,
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  #sidebar .sidebar-links {
+    display: none;
   }
 
   #sidebar .logo {
