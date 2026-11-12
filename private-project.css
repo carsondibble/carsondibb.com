@@ -8,6 +8,21 @@
   width: 100%;
 }
 
+.private-project-gallery {
+  width: 100%;
+}
+
+.private-project-card[hidden] {
+  display: none;
+}
+
+.private-project-gallery .project-cover {
+  display: block;
+  width: min(100%, 900px);
+  height: auto;
+  margin: 24px 0;
+}
+
 .private-project-card {
   width: min(100%, 520px);
   margin: clamp(48px, 12vh, 120px) auto 0;
@@ -51,7 +66,8 @@
 
 .private-project-card input:focus-visible,
 .private-project-card button:focus-visible,
-.private-project-back-link:focus-visible {
+.private-project-back-link:focus-visible,
+.private-project-drive-link:focus-visible {
   outline: 2px solid #c49a45;
   outline-offset: 3px;
 }
@@ -93,6 +109,15 @@
   min-height: 44px;
   align-items: center;
   margin-top: 14px;
+  color: #ddd;
+  text-underline-offset: 4px;
+}
+
+.private-project-drive-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin: 20px 20px 0 0;
   color: #ddd;
   text-underline-offset: 4px;
 }

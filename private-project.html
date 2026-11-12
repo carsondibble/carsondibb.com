@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="archive.css" />
     <link rel="stylesheet" href="mobile.css" />
     <link rel="stylesheet" href="private-project.css" />
+    <script src="archive-api-key.js" defer></script>
     <script src="private-projects.js" defer></script>
     <script src="private-project.js" defer></script>
   </head>
@@ -47,10 +48,10 @@
         <ol>
           <li><a href="index.html">Home</a></li>
           <li><a href="archive.html">Archive</a></li>
-          <li aria-current="page">Private Projects</li>
+          <li data-private-project-breadcrumb aria-current="page">Private Projects</li>
         </ol>
       </nav>
-      <section class="private-project-card" aria-labelledby="private-project-title">
+      <section class="private-project-card" data-private-project-gate aria-labelledby="private-project-title">
         <p class="archive-eyebrow">PRIVATE PROJECTS</p>
         <h1 id="private-project-title">ENTER YOUR ACCESS CODE</h1>
         <p class="private-project-intro">Enter the password you received to open your project.</p>
@@ -70,6 +71,30 @@
         <p class="private-project-status" data-private-project-status role="status" aria-live="polite"></p>
         <a class="private-project-back-link" href="archive.html">Back to the archive</a>
       </section>
+      <section
+        class="private-project-gallery"
+        data-private-project-gallery
+        aria-labelledby="private-project-gallery-title"
+        hidden
+      >
+        <header class="archive-heading">
+          <p class="archive-eyebrow">PRIVATE PHOTOGRAPHY PROJECT</p>
+          <h1 id="private-project-gallery-title" data-private-project-gallery-title></h1>
+          <p data-private-project-gallery-description></p>
+          <img class="project-cover" data-private-project-cover alt="" />
+        </header>
+        <p class="archive-status" data-private-project-gallery-status role="status" aria-live="polite"></p>
+        <section class="drive-gallery" data-private-project-photos aria-label="Private project photos"></section>
+        <a class="private-project-drive-link" data-private-project-drive target="_blank" rel="noopener noreferrer">Open project folder in Google Drive</a>
+        <a class="private-project-back-link" href="archive.html">Back to the archive</a>
+      </section>
     </main>
+
+    <dialog class="archive-lightbox" data-lightbox aria-label="Photo viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close photo">×</button>
+      <img data-lightbox-image alt="" />
+      <p data-lightbox-caption></p>
+      <a data-lightbox-drive target="_blank" rel="noopener noreferrer">Open in Google Drive</a>
+    </dialog>
   </body>
 </html>
