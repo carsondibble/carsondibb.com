@@ -38,6 +38,10 @@ jobs:
           GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
         run: |
           python -c "import json,os,pathlib; pathlib.Path('archive-api-key.js').write_text('window.ARCHIVE_CONFIG.apiKey = ' + json.dumps(os.environ.get('GOOGLE_DRIVE_API_KEY', '')) + ';\\n', encoding='utf-8')"
+      - name: Generate crawlable project pages and sitemap
+        env:
+          GOOGLE_DRIVE_API_KEY: ${{ secrets.GOOGLE_DRIVE_API_KEY }}
+        run: python scripts/build_seo_pages.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

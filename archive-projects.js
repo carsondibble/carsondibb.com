@@ -1,12 +1,15 @@
-window.ARCHIVE_CONFIG = {
-  projects: [
-    {
-      slug: "usa-out",
-      title: "USA Out",
-      description: "Photos from the USA Out project.",
-      folderUrl: "https://drive.google.com/drive/folders/1XRrVJHMgJqXqGKE_w4xbjJuEMq33Lziy?usp=sharing",
-      coverFileId: "1_RUt8WxhF6Pd2nIMjIZV1BwQpRQEU_vL",
-      access: "public",
-    },
-  ],
-};
+window.ARCHIVE_CONFIG = { apiKey: "", projects: [] };
+window.ARCHIVE_PROJECTS_PROMISE = fetch("archive-projects.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Project configuration returned an error (${response.status}).`);
+    }
+    return response.json();
+  })
+  .then((projects) => {
+    if (!Array.isArray(projects)) {
+      throw new Error("Project configuration must be a list.");
+    }
+    window.ARCHIVE_CONFIG.projects = projects;
+    return projects;
+  });

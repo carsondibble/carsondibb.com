@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.carsondibb.com/</loc>
-  </url>
-  <url>
-    <loc>https://www.carsondibb.com/gallery.html</loc>
-  </url>
-  <url>
-    <loc>https://www.carsondibb.com/about.html</loc>
-  </url>
-  <url>
-    <loc>https://www.carsondibb.com/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://www.carsondibb.com/archive.html</loc>
-  </url>
+  <url><loc>https://www.carsondibb.com/</loc></url>
+  <url><loc>https://www.carsondibb.com/gallery.html</loc></url>
+  <url><loc>https://www.carsondibb.com/about.html</loc></url>
+  <url><loc>https://www.carsondibb.com/contact.html</loc></url>
+  <url><loc>https://www.carsondibb.com/archive.html</loc></url>
+  <url><loc>https://www.carsondibb.com/sports-photography.html</loc></url>
+  <url><loc>https://www.carsondibb.com/event-photography.html</loc></url>
+  <url><loc>https://www.carsondibb.com/portrait-photography.html</loc></url>
+  <url><loc>https://www.carsondibb.com/concert-photography.html</loc></url>
+  <url><loc>https://www.carsondibb.com/archive/usa-out/</loc></url>
 </urlset>

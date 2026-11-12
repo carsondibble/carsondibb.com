@@ -4,11 +4,6 @@
   const projectList = document.querySelector("[data-project-list]");
   const gallery = document.querySelector("[data-drive-gallery]");
 
-  if (!config || !Array.isArray(config.projects)) {
-    setStatus("Projects are temporarily unavailable.");
-    return;
-  }
-
   function setStatus(message) {
     if (status) status.textContent = message;
   }
@@ -54,7 +49,7 @@
   function makeProjectCard(project) {
     const link = document.createElement("a");
     link.className = "project-card";
-    link.href = `archive-project.html?project=${encodeURIComponent(project.slug)}`;
+    link.href = `archive/${encodeURIComponent(project.slug)}/`;
 
     if (project.coverFileId && /^[a-zA-Z0-9_-]+$/.test(project.coverFileId)) {
       const image = document.createElement("img");
@@ -126,7 +121,7 @@
     return files.filter((file) => file.id && file.name).sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  function renderDriveImage(file) {
+  function renderDriveImage(file, projectTitle) {
     const figure = document.createElement("figure");
     figure.className = "drive-photo";
 
@@ -139,7 +134,8 @@
 
     const image = document.createElement("img");
     image.src = driveThumbnail(file.id);
-    image.alt = file.name.replace(/\.[^.]+$/, "");
+    const photoName = file.name.replace(/\.[^.]+$/, "");
+    image.alt = `${projectTitle} project photo: ${photoName}, by Carson Dibb (carsondibb.com).`;
     image.loading = "lazy";
     image.decoding = "async";
 
@@ -195,7 +191,7 @@
     try {
       setStatus("Loading photos from Google Drive…");
       const files = await listDriveImages(folderId);
-      gallery.replaceChildren(...files.map(renderDriveImage));
+      gallery.replaceChildren(...files.map((file) => renderDriveImage(file, project.title)));
       setStatus(
         files.length
           ? `${files.length} photo${files.length === 1 ? "" : "s"}`
@@ -219,7 +215,7 @@
       if (!button) return;
 
       image.src = driveThumbnail(button.dataset.fileId, 2000);
-      image.alt = button.dataset.fileName.replace(/\.[^.]+$/, "");
+      image.alt = button.querySelector("img").alt;
       caption.textContent = image.alt;
       driveLink.href = button.dataset.driveUrl;
       dialog.showModal();
@@ -234,10 +230,17 @@
     });
   }
 
-  if (projectList) {
-    loadProjectList();
-  } else if (gallery) {
-    setupLightbox();
-    loadProjectGallery();
-  }
+  window.ARCHIVE_PROJECTS_PROMISE
+    .then((projects) => {
+      config.projects = projects;
+      if (projectList) {
+        loadProjectList();
+      } else if (gallery) {
+        setupLightbox();
+        loadProjectGallery();
+      }
+    })
+    .catch((error) => {
+      setStatus(error instanceof Error ? error.message : "Unable to load project configuration.");
+    });
 })();
