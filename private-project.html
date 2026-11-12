@@ -58,8 +58,13 @@
           <p>Browse private project covers. Enter your password to open a gallery.</p>
         </header>
         <section class="project-grid" data-private-project-list aria-label="Private photography archives"></section>
-        <div class="private-project-card">
-          <h2>ENTER YOUR ACCESS CODE</h2>
+        <div
+          id="private-project-password-panel"
+          class="private-project-card"
+          data-private-project-password-panel
+          hidden
+        >
+          <h2>OPEN <span data-private-project-selected-title></span></h2>
           <p class="private-project-intro">Enter the password you received to view a project's photos.</p>
           <form data-private-project-form>
             <label for="private-project-password">Password</label>
@@ -75,6 +80,7 @@
             <button type="submit">OPEN PROJECT</button>
           </form>
           <p class="private-project-status" data-private-project-status role="status" aria-live="polite"></p>
+          <button class="private-project-choose-link" data-private-project-choose type="button">Choose another archive</button>
           <a class="private-project-back-link" href="archive.html">Back to the public archive</a>
         </div>
       </section>

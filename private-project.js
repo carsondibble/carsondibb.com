@@ -7,6 +7,9 @@
   const config = window.ARCHIVE_CONFIG;
   const projectGate = document.querySelector("[data-private-project-gate]");
   const projectList = document.querySelector("[data-private-project-list]");
+  const passwordPanel = document.querySelector("[data-private-project-password-panel]");
+  const selectedProjectTitle = document.querySelector("[data-private-project-selected-title]");
+  const chooseProjectButton = document.querySelector("[data-private-project-choose]");
   const projectGallery = document.querySelector("[data-private-project-gallery]");
   const galleryTitle = document.querySelector("[data-private-project-gallery-title]");
   const galleryDescription = document.querySelector("[data-private-project-gallery-description]");
@@ -24,6 +27,9 @@
     !config ||
     !projectGate ||
     !projectList ||
+    !passwordPanel ||
+    !selectedProjectTitle ||
+    !chooseProjectButton ||
     !projectGallery ||
     !galleryTitle ||
     !galleryDescription ||
@@ -75,9 +81,12 @@
         .filter((project) => project.folder)
     : [];
 
+  let selectedProject = null;
+
   for (const project of configuredProjects) {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
     card.className = "project-card";
+    card.href = "#private-project-password-panel";
 
     const image = document.createElement("img");
     image.src = driveThumbnail(project.coverFileId, 900);
@@ -97,10 +106,27 @@
     }
 
     card.append(image, copy);
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectedProject = project;
+      selectedProjectTitle.textContent = project.title;
+      passwordPanel.hidden = false;
+      passwordInput.value = "";
+      status.textContent = "";
+      passwordInput.focus();
+    });
     projectList.append(card);
   }
 
+  chooseProjectButton.addEventListener("click", () => {
+    selectedProject = null;
+    passwordInput.value = "";
+    status.textContent = "";
+    passwordPanel.hidden = true;
+  });
+
   if (!configuredProjects.length) {
+    passwordPanel.hidden = false;
     passwordInput.disabled = true;
     submitButton.disabled = true;
     status.textContent = "No private projects are currently available.";
@@ -222,15 +248,14 @@
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const project = configuredProjects.find((item) => item.password === passwordInput.value);
 
-    if (!project) {
-      status.textContent = "That password did not match a private project.";
+    if (!selectedProject || selectedProject.password !== passwordInput.value) {
+      status.textContent = "That password did not match this project.";
       passwordInput.select();
       return;
     }
 
     passwordInput.value = "";
-    openProject(project);
+    openProject(selectedProject);
   });
 })();

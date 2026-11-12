@@ -35,6 +35,10 @@
   border: 1px solid #333;
 }
 
+.private-project-card[hidden] {
+  display: none;
+}
+
 .private-project-card h2 {
   margin: 0;
   font-size: clamp(20px, 3vw, 28px);
@@ -70,6 +74,7 @@
 
 .private-project-card input:focus-visible,
 .private-project-card button:focus-visible,
+.private-project-choose-link:focus-visible,
 .private-project-back-link:focus-visible,
 .private-project-drive-link:focus-visible {
   outline: 2px solid #c49a45;
@@ -115,6 +120,21 @@
   margin-top: 14px;
   color: #ddd;
   text-underline-offset: 4px;
+}
+
+.private-project-choose-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin: 14px 20px 0 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #ddd;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 .private-project-drive-link {
