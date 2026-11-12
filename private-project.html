@@ -10,8 +10,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Private Projects | Carson Dibb</title>
-    <meta name="description" content="Enter your access code to open a private project." />
+    <title>Private Archives | Carson Dibb</title>
+    <meta name="description" content="Browse private project covers and enter your password to open a gallery." />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="archive.css" />
     <link rel="stylesheet" href="mobile.css" />
@@ -48,28 +48,35 @@
         <ol>
           <li><a href="index.html">Home</a></li>
           <li><a href="archive.html">Archive</a></li>
-          <li data-private-project-breadcrumb aria-current="page">Private Projects</li>
+          <li data-private-project-breadcrumb aria-current="page">Private Archives</li>
         </ol>
       </nav>
-      <section class="private-project-card" data-private-project-gate aria-labelledby="private-project-title">
-        <p class="archive-eyebrow">PRIVATE PROJECTS</p>
-        <h1 id="private-project-title">ENTER YOUR ACCESS CODE</h1>
-        <p class="private-project-intro">Enter the password you received to open your project.</p>
-        <form data-private-project-form>
-          <label for="private-project-password">Password</label>
-          <input
-            id="private-project-password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
-            autocapitalize="none"
-            spellcheck="false"
-            required
-          />
-          <button type="submit">OPEN PROJECT</button>
-        </form>
-        <p class="private-project-status" data-private-project-status role="status" aria-live="polite"></p>
-        <a class="private-project-back-link" href="archive.html">Back to the archive</a>
+      <section class="private-project-gate" data-private-project-gate aria-labelledby="private-project-title">
+        <header class="archive-heading">
+          <p class="archive-eyebrow">PRIVATE WORK</p>
+          <h1 id="private-project-title">PRIVATE ARCHIVES</h1>
+          <p>Browse private project covers. Enter your password to open a gallery.</p>
+        </header>
+        <section class="project-grid" data-private-project-list aria-label="Private photography archives"></section>
+        <div class="private-project-card">
+          <h2>ENTER YOUR ACCESS CODE</h2>
+          <p class="private-project-intro">Enter the password you received to view a project's photos.</p>
+          <form data-private-project-form>
+            <label for="private-project-password">Password</label>
+            <input
+              id="private-project-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              autocapitalize="none"
+              spellcheck="false"
+              required
+            />
+            <button type="submit">OPEN PROJECT</button>
+          </form>
+          <p class="private-project-status" data-private-project-status role="status" aria-live="polite"></p>
+          <a class="private-project-back-link" href="archive.html">Back to the public archive</a>
+        </div>
       </section>
       <section
         class="private-project-gallery"

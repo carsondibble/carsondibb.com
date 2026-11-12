@@ -6,6 +6,7 @@
   const projects = window.PRIVATE_PROJECTS;
   const config = window.ARCHIVE_CONFIG;
   const projectGate = document.querySelector("[data-private-project-gate]");
+  const projectList = document.querySelector("[data-private-project-list]");
   const projectGallery = document.querySelector("[data-private-project-gallery]");
   const galleryTitle = document.querySelector("[data-private-project-gallery-title]");
   const galleryDescription = document.querySelector("[data-private-project-gallery-description]");
@@ -22,6 +23,7 @@
     !status ||
     !config ||
     !projectGate ||
+    !projectList ||
     !projectGallery ||
     !galleryTitle ||
     !galleryDescription ||
@@ -72,6 +74,31 @@
         .map((project) => ({ ...project, folder: getFolder(project) }))
         .filter((project) => project.folder)
     : [];
+
+  for (const project of configuredProjects) {
+    const card = document.createElement("article");
+    card.className = "project-card";
+
+    const image = document.createElement("img");
+    image.src = driveThumbnail(project.coverFileId, 900);
+    image.alt = `${project.title} project cover`;
+    image.loading = "lazy";
+    image.decoding = "async";
+
+    const copy = document.createElement("div");
+    copy.className = "project-card-copy";
+    const title = document.createElement("h2");
+    title.textContent = project.title;
+    copy.append(title);
+    if (project.description) {
+      const description = document.createElement("p");
+      description.textContent = project.description;
+      copy.append(description);
+    }
+
+    card.append(image, copy);
+    projectList.append(card);
+  }
 
   if (!configuredProjects.length) {
     passwordInput.disabled = true;
