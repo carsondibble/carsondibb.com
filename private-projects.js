@@ -29,4 +29,11 @@ window.PRIVATE_PROJECTS = [
     folderUrl: "https://drive.google.com/drive/folders/1QzLSC22-nAZocEyqK-w2Kwf0YNxtbrFw?usp=sharing",
     coverFileId: "1URBZ4kDzMUth0PXV2Gwm-CAkY9-HTOmt",
   },
+  {
+    password: "Lilbro",
+    title: "Layton Homecoming",
+    description: "Photos from Layton Homecoming, photographed by Carson Dibb.",
+    folderUrl: "https://drive.google.com/drive/folders/1fNo2lMeDkcBSVeK_VqSVa-al4j5QphXz?usp=sharing",
+    coverFileId: "1HoxhwxxqCJ60ob2Zav9iueb2rScz5AbX",
+  },
 ];
