@@ -22,4 +22,11 @@ window.PRIVATE_PROJECTS = [
     folderUrl: "https://drive.google.com/drive/folders/1Q6udpHNws2q4NyvPQVZ9H2h5UafIs9lT?usp=sharing",
     coverFileId: "1J555vleAo_E9e_1Rllgh-gxNl4Thy57U",
   },
+  {
+    password: "Dance",
+    title: "Sparks Swing Dancing in Provo",
+    description: "Photos from Sparks Swing Dancing in Provo, photographed by Carson Dibb.",
+    folderUrl: "https://drive.google.com/drive/folders/1QzLSC22-nAZocEyqK-w2Kwf0YNxtbrFw?usp=sharing",
+    coverFileId: "1URBZ4kDzMUth0PXV2Gwm-CAkY9-HTOmt",
+  },
 ];
