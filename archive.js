@@ -12,7 +12,7 @@
     return typeof value === "string" ? value : "";
   }
 
-  function driveThumbnail(fileId, size = 1200) {
+  function driveThumbnail(fileId, size = 1000) {
     return `https://drive.google.com/thumbnail?id=${encodeURIComponent(fileId)}&sz=w${size}`;
   }
 

@@ -64,7 +64,7 @@ def list_drive_images(folder_id, api_key):
             )
 
 
-def thumbnail(file_id, size=1200):
+def thumbnail(file_id, size=1000):
     return (
         "https://drive.google.com/thumbnail?"
         + urllib.parse.urlencode({"id": file_id, "sz": f"w{size}"})
