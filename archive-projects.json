@@ -206,5 +206,21 @@
     "folderUrl": "https://drive.google.com/drive/folders/1TIgT3WTMQwjtfM3PRM6VcaqaMCHukokg?usp=sharing",
     "coverFileId": "1HuFcfXGlVM071Joll-TIvLc06oxWMbYn",
     "access": "public"
+  },
+  {
+    "slug": "comic-product-shoot",
+    "title": "Comic Product Shoot",
+    "description": "Photos from a comic-inspired product shoot, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1j53n5zPPXD5IhZVZRTYRHp_hS6WqIjvt?usp=sharing",
+    "coverFileId": "1dpDkDX1TlJ9iJtGeEKEN2Wyudl4Cg1LW",
+    "access": "public"
+  },
+  {
+    "slug": "dartman-merch-photoshoot",
+    "title": "Dartman Merch Photoshoot",
+    "description": "Photos from a Dartman merchandise photoshoot, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1JidHUQwFbHiROIJiG29PWMyVHBsTkIqB?usp=sharing",
+    "coverFileId": "1_iSCyqDxmJ3sNjlCzZVPJ1qVf5EOFzE-",
+    "access": "public"
   }
 ]
