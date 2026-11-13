@@ -3,7 +3,7 @@
 window.PRIVATE_PROJECTS = [
   {
     password: "Fall2026",
-    title: "Fall Photoshoot",
+    title: "Cottonwood Canyon Fall Photoshoot",
     description: "Photos from a fall photoshoot, photographed by Carson Dibb.",
     folderUrl: "https://drive.google.com/drive/folders/1lKIN-D3unr2LzdJkW6--iypqmY8rOH2J?usp=sharing",
     coverFileId: "1RUC__QoU943CCBh-KtX08rLz-MnF8Mwk",
@@ -31,7 +31,7 @@ window.PRIVATE_PROJECTS = [
   },
   {
     password: "Lilbro",
-    title: "Layton Homecoming",
+    title: "Layton Homecoming 2026",
     description: "Photos from Layton Homecoming, photographed by Carson Dibb.",
     folderUrl: "https://drive.google.com/drive/folders/1fNo2lMeDkcBSVeK_VqSVa-al4j5QphXz?usp=sharing",
     coverFileId: "1HoxhwxxqCJ60ob2Zav9iueb2rScz5AbX",
