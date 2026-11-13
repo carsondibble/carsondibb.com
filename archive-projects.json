@@ -158,5 +158,45 @@
     "folderUrl": "https://drive.google.com/drive/folders/1QbBCy8X4qIuefRNoKAo-SGPDw9SGiD1f?usp=sharing",
     "coverFileId": "1I-hOOs-SsbLqWzWly4n_fbnZUSIayusX",
     "access": "public"
+  },
+  {
+    "slug": "mountain-trampoline",
+    "title": "Mountain Trampoline",
+    "description": "Photos from Mountain Trampoline, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1EiBkXcdeJtZpX7id7FaU13w7vn5j6ayi?usp=sharing",
+    "coverFileId": "1iBlfRT6THZtxMhiVoabJmlhSIsO7Otjq",
+    "access": "public"
+  },
+  {
+    "slug": "provo-punkofest-concert",
+    "title": "Provo PunkoFest Concert",
+    "description": "Photos from Provo PunkoFest Concert, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1uLAdNNFKod3kvrvUM2s6mJZzZfJaPS8C?usp=sharing",
+    "coverFileId": "1Xmb2ZJG4fh-rsRCAB6u3aRSO_obeMVdU",
+    "access": "public"
+  },
+  {
+    "slug": "capitol-photoshoot",
+    "title": "Capitol Photoshoot",
+    "description": "Photos from a Capitol photoshoot, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1FbnpNp9zj6638_kfMXYzr515lLKmenPK?usp=sharing",
+    "coverFileId": "1n-YYcoZQ5KVare8GSBFHcmo9GQORuXGI",
+    "access": "public"
+  },
+  {
+    "slug": "kaysville-fireworks-show",
+    "title": "Kaysville Fireworks Show",
+    "description": "Photos from the Kaysville Fireworks Show, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1ag8wrhyVp0v3gMDNRkeLrJ4pt2LUeOd2?usp=sharing",
+    "coverFileId": "1iUkxBApfA73Ky_HP_hxSOSbbkDWiPWX5",
+    "access": "public"
+  },
+  {
+    "slug": "university-of-utah-jersey-photoshoot",
+    "title": "University of Utah Jersey Photoshoot",
+    "description": "Photos from a University of Utah jersey photoshoot, photographed by Carson Dibb.",
+    "folderUrl": "https://drive.google.com/drive/folders/1j2ZN2p7QZXn5bfO5ksxzBay_sWRulth2?usp=sharing",
+    "coverFileId": "1UideiAJPIXqHhfKJWA8KAXARV4ghcO1Q",
+    "access": "public"
   }
 ]
