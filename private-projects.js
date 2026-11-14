@@ -2,13 +2,6 @@
 // are visible in the deployed site source; do not use it for sensitive content.
 window.PRIVATE_PROJECTS = [
   {
-    password: "Lamp",
-    title: "Car Top Photoshoot",
-    description: "Photos from the Car Top Photoshoot, photographed by Carson Dibb.",
-    folderUrl: "https://drive.google.com/drive/folders/1FkIFFJQQRLgNeKQ3y9oJ5a2M-ykgxhhi?usp=sharing",
-    coverFileId: "1hlZeMrMsOfMLlrCqNeQryneqhGH6sjrg",
-  },
-  {
     password: "Fall2026",
     title: "Cottonwood Canyon Fall Photoshoot",
     description: "Photos from a fall photoshoot, photographed by Carson Dibb.",
