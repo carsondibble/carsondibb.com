@@ -76,18 +76,18 @@ body {
 .archive-heading:has(> .project-cover) {
   position: relative;
   display: flex;
-  min-height: 380px;
+  min-height: 300px;
   flex-direction: column;
   justify-content: flex-end;
   isolation: isolate;
-  padding: 140px 0 28px;
+  padding: 100px 0 20px;
   background: #111;
 }
 
 .archive-heading:has(> .project-cover)::before {
   position: absolute;
   z-index: -1;
-  background: linear-gradient(to bottom, rgb(17 17 17 / 80%), #111);
+  background: linear-gradient(to bottom, rgb(17 17 17 / 90%), #111);
   content: "";
   inset: 0;
 }
