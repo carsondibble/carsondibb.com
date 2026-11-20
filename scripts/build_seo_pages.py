@@ -10,18 +10,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://www.carsondibb.com"
-PROJECTS_FILE = ROOT / "archive-projects.json"
+PROJECTS_FILE = ROOT / "assets" / "data" / "archive-projects.json"
 SITEMAP_FILE = ROOT / "sitemap.xml"
 STATIC_PAGES = [
     "/",
-    "/gallery.html",
-    "/about.html",
-    "/contact.html",
-    "/archive.html",
-    "/sports-photography.html",
-    "/event-photography.html",
-    "/portrait-photography.html",
-    "/concert-photography.html",
+    "/gallery/",
+    "/about/",
+    "/contact/",
+    "/archive/",
+    "/sports-photography/",
+    "/event-photography/",
+    "/portrait-photography/",
+    "/concert-photography/",
 ]
 
 
@@ -168,13 +168,13 @@ def render_project(project, photos, api_key_available):
     <meta name="twitter:description" content="{escape(description)}" />
     {f'<meta name="twitter:image" content="{escape(cover)}" />' if cover else ""}
     <script type="application/ld+json">{json_ld(schema)}</script>
-    <link rel="icon" type="image/png" href="../../favicon.png" />
-    <link rel="stylesheet" href="../../archive.css" />
-    <link rel="stylesheet" href="../../mobile.css" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="stylesheet" href="/assets/css/archive.css" />
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
   </head>
   <body>
     <nav id="sidebar" aria-label="Main navigation">
-      <a href="../../index.html" class="logo"><img class="sidebar-signature" src="../../Images/signature.svg" alt="" aria-hidden="true" /></a>
+      <a href="../../index.html" class="logo"><img class="sidebar-signature" src="/assets/images/signature.svg" alt="" aria-hidden="true" /></a>
       <nav class="sidebar-links" aria-label="Main pages">
         <a href="../../gallery.html">Gallery</a>
         <a href="../../archive.html" aria-current="page">Archive</a>

@@ -1,5 +1,5 @@
 window.ARCHIVE_CONFIG = { apiKey: "", projects: [] };
-window.ARCHIVE_PROJECTS_PROMISE = fetch("archive-projects.json")
+window.ARCHIVE_PROJECTS_PROMISE = fetch("/assets/data/archive-projects.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error(`Project configuration returned an error (${response.status}).`);
